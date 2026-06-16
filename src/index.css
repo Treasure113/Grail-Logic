@@ -1,0 +1,56 @@
+:root {
+  background-color: #0D0D0D;
+  --text: white;
+  --text-h: white;
+  --code-bg: #f4f3ec;
+  --accent: #aa3bff; /* For buttons, active navigation links, switches, checkboxes, button-hover, highlights*/
+  --primary: #3B3C9A;
+
+  --sans: 'Inter', sans-serif;
+  --heading: 'Eudoxus Sans', 'Hanken Grotesk', Arial;
+
+  font: 16px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+
+
+body {
+  margin: 0;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 700;
+  color: var(--text-h);
+}
+
+h1 {
+
+}
+
+h2 {
+  font-size: 44px;
+}
+
+p {
+  margin: 0;
+}
