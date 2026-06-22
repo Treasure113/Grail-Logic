@@ -1,5 +1,11 @@
+import {useState} from 'react';
+import { Link } from 'react-router-dom';
+
 import { Star } from 'lucide-react';
 import {Button} from './Header';
+import { Logo2 } from '../AuthPages/SignupPage';
+import { InputField } from '../ContactPage/LetsTalk';
+import { Google } from '../AuthPages/LoginPage';
 
 const pic1 = '/pic1.png';
 const pic2 = '/pic2.png';
@@ -120,16 +126,6 @@ function ImageDiv() {
     )
 }
 
-function BlurredDemarcationLine({}) {
-    return (
-        <>        
-        <div className={`relative w-full lg:max-w-full border bg-[#0D0D0D] opacity-80 h-[20rem] blur-lg`}>
-        </div>
-        </>
-
-    )
-}
-
 function HeroImage() {
     return (
             <div className='-mt-24'>
@@ -148,7 +144,7 @@ function Brands({logo, alt}) {
 export function TrustedBy({className}) {
     return (
      <>
-        {/* <BlurredDemarcationLine /> */}
+        
                     <div className={`flex flex-col items-center -mt-24 justify-center ${className}`}>
                                             
                         <div className='w-full bg-black p-3 shadow-[100px_1px_200px_100px_]'>
@@ -196,9 +192,11 @@ function Rating() {
 }
 
 export function HeroText({maintext, subtext}) {
+    const [modal, setModal] = useState(false);
+    const [userName, setUserName] = useState('');
     return (
     
-                    <div className=' flex flex-col mx-auto w-fit gap-12 items-center justify-center'>                   
+                    <div className='relative flex flex-col mx-auto w-fit gap-12 items-center justify-center'>                   
                         <div className='flex flex-col items-center justify-center max-w-full text-center  gap-6'>
                             <div>
                                 <h1 className='text-[28px] md:text-md lg:text-5xl font-[700] tracking-wide leading-tight w-[343px] lg:w-[800px] h-auto text-center'>
@@ -212,7 +210,93 @@ export function HeroText({maintext, subtext}) {
                             </div>
                         </div>
 
-                        <Button label="Connect your account" className='pt-4 pr-8 pb-4 pl-8 w-fit relative z-10' />
+                        
+                        <Button label="Connect your account" className='pt-4 pr-8 pb-4 pl-8 w-fit z-10' 
+                           onClick={() => {
+                            console.log('clicked');
+                            setModal(true)}} 
+                        />
+
+                        
+                        {modal && (
+                                <div className="fixed inset-0 z-[9999] backdrop-blur-lg overflow-y-auto flex flex-col items-center justify-center bg-black/50"
+                                    onClick={(e) => setModal(false)}
+                                >
+
+                                    
+                                    
+                                    <div className="relative flex flex-col gap-6 bg-[#100E24] border border-[#3B3C9A99] rounded-lg p-6 w-[90%] max-w-[500px] transition duration-300"
+                                        onClick={(e) => e.stopPropagation()}
+                                    >
+
+                                        <img src={Logo2} className='w-[159.74px] h-[41px] object-cover'></img>
+                                    
+                                            <div className='flex flex-col gap-1 mt-5 lg:gap-2 text-[24px]'>
+                                                <h1 classname=''>Link Your Trading Account </h1>
+                                                <p className='text-white opacity-80 lg:opacity-50 text-[14px] w-full'>Connect your trading account to start mirroring trades from Grail Logic’s master strategy account.</p>
+                                            </div>
+
+                                            
+
+                                        {/* Close button */}
+                                        <button
+                                            onClick={() => setModal(false)}
+                                            className="absolute top-5 right-4 text-white text-xl hover:text-[#5759D0]"
+                                        >
+                                            ✕
+                                        </button>
+
+                                        <div className='flex flex-col gap-4'>
+                                            <InputField
+                                                text='Account Username'
+                                                placeholder='Enter your trading account ID or username'
+                                                value={userName}
+                                                onChange={(e) => setUserName(e.target.value)}
+                                            />
+                                        </div>
+
+                                        <p className='text-white text-[12px]'>
+                                            Your account is connected using secure, investor-level credentials. You can disconnect at any time.
+                                        </p>
+
+
+                                        <div className='flex flex-col gap-4 mt-4'>
+                                            <button
+                                                className={`w-full text-white text-sm rounded-[12px] px-4 py-[10px] transition duration-300
+                                                        ${userName.trim() ? 'bg-[#3B3C9A]' :'bg-[#7C7CBB]'}
+                                                    `}
+                                                type='submit'
+                                            >
+                                                Connect my account
+                                            </button>
+                                        </div>
+
+                                        <div className='flex flex-col gap-4 mt-4'>
+                                            <div className='flex gap-2 items-center'>
+                                                <div className='w-1/2 border border-[#303030]'></div>
+                                                <p className='text-[#8C8C8C] text-sm'>Or</p>
+                                                <div className='w-1/2 border border-[#303030]'></div>
+                                            </div>
+
+                                            <div className='w-full text-center'>
+                                                <p className='text-white text-[12px] opacity-80'>
+                                                    Don't have a trading account?{' '}
+                                                </p>
+                                            </div>
+
+
+                                            <button className={`text-[#3B3C9A] bg-white flex items-center justify-center gap-2 text-sm border-white w-full h-[48px] border rounded-[12px]
+                                                `
+                                            }
+                                            >
+                                                Create a broker account
+                                            </button>
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                            )}
                     </div>
     )
 }

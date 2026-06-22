@@ -1,28 +1,72 @@
+import {useState} from 'react';
+
+import { Minus } from 'lucide-react';
 import { Plus } from 'lucide-react';
 import { Button } from './Header'
 
 
 const abstractBackground = '/Frame 971.png'
 
-function FAQCards({text}) {
+function FAQCards({text, dropDownText}) {
+    const [dropDown, setDropDown] = useState(false);
     return (
         <>
-        <div className='flex flex-col gap-2'>
-            <div className="flex justify-between items-center">
+        <div className='relative flex flex-col gap-2'>
+            <button className="flex justify-between items-center"
+                onClick={() => setDropDown(!dropDown)}
+            >
                     <h1 className="!text-black text-sm">
                         {text}
                     </h1>
 
-                    <p className='text-[#222222]'><Plus /></p>
-            </div>
+                    {dropDown ? (
+                            <Minus size={20} />
+                        ) : (
+                            <Plus size={20} />
+                    )}
+            </button>
                 {/* Demarcation */}
             <div className='border-b border-[#E8EBED]'></div>
+
+             <div
+                    className={`
+                        overflow-hidden
+                        transition-all
+                        duration-300
+                        ease-in-out
+                        ${
+                            dropDown
+                            ? "max-h-40 opacity-100 mt-4"
+                            : "max-h-0 opacity-0 mt-0"
+                        }
+                    `}
+                    >
+                    <p className="text-[#5A5A5A] text-sm">
+                    {dropDownText}
+                    </p>
+                </div>
         </div>
         </>
     )
 }
 
 export function Card({className}) {
+     const [position, setPosition] = useState({ x: 0, y: 0 });
+     const handleMouseMove = (e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+
+        setPosition ({
+            x: x * 0.3,
+            y: y * 0.3
+        });
+     };
+
+     const handleMouseLeave = () => {
+        setPosition({x: 0, y: 0})
+     }
     return (
         <div className={`flex items-center justify-center ${className}`}>
             {/* Main Div */}
@@ -45,10 +89,17 @@ export function Card({className}) {
                 </div>
 
             {/* Button Overlay*/}
-            <div className='absolute bottom-12 left-1/2 -translate-x-1/2 md:bottom-12 flex'>
+            <div className='absolute bottom-12 left-1/2 -translate-x-1/2 md:bottom-12 flex'
+                style={{
+                        transform: `translate(${position.x}px, ${position.y}px)`,
+                    }}
+                    onMouseMove = {handleMouseMove}
+                    onMouseLeave = {handleMouseLeave}
+            >
                 <Button 
                     label = 'Get started now'
                     className='pt-4 pr-8 pb-4 pl-8 w-fit'
+                     
                 />
             </div>
             </div>
@@ -69,26 +120,32 @@ export default function FAQs({showCard = true}) {
             <div className='flex flex-col gap-12 md:p-12 lg:w-1/2 lg:mx-auto'>
                <FAQCards 
                 text='Do I need trading experience to use Grail Logic?'
+                dropDownText='No, you don’t. Once you connect your broker account, our system handles the trading for you. There’s no need to monitor charts or manage trades manually.'
                />
 
                <FAQCards 
                 text='Is my money safe with Grail Logic?'
+                dropDownText='Yes. Your funds stay in your own trading account. We don’t have access to your money. We only mirror trades from our strategy account through a secure connection.'
                /> 
 
                <FAQCards 
                 text='What brokers do you support?'
+                dropDownText='Grail Logic currently supports popular MT4 and MT5 brokers. We recommend using a trusted and regulated broker for the best experience.'
                />
 
                <FAQCards 
                 text='Can I disconnect my account at any time?'
+                dropDownText='Absolutely. You have full control and can pause or disconnect your account from the mirroring system whenever you choose.'
                />
 
                <FAQCards 
                 text='How often does the system trade?'
+                dropDownText='The bot trades based on market conditions and strategy triggers. You’ll typically see multiple trades per week, depending on volatility and setup accuracy.'
                />
 
                <FAQCards 
                 text='How much can I expect to earn?'
+                dropDownText='Returns vary based on market conditions, but our master strategy has maintained a historical 65% win rate. While past performance isn’t a guarantee, it provides strong potential for steady growth.'
                />
             </div>
                     {/* Card */}

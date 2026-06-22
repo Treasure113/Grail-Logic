@@ -142,15 +142,11 @@ function Testimonial() {
     )
 }
 
-
-
-
-
 export default function StillNeedHelp({isTestimonial=true, className, className2, className3}) {
     return (
         <section id='StillNeedHelp?' className={`mt-16 ${className3}`}>
             <div className={`flex flex-col gap-[40px] p-2 ${className2}`}>
-                <div className="text-center flex flex-col gap-4 md:gap-8">
+                <div className="text-center flex flex-col gap-4 md:gap-8 mt-8">
                     <h1 className="text-[24px] tracking-tight md:text-[44px]">Still need help?</h1>
                     <p className="text-white text-sm opacity-50 leading-relaxed md:w-full">If you didn’t find what you’re looking for, we’re here to assist you directly.</p>
                 </div>

@@ -17,11 +17,11 @@ export default function HomePage() {
             >    
                 {/* Background Images */}
                 <div className="flex">                    
-                    <div className="absolute left-0">
+                    <div className="absolute z-0 left-0 pointer-events-none">
                         <img src={Frame2}/>
                     </div>
 
-                    <div className="absolute right-0">
+                    <div className="absolute z-0 right-0 pointer-events-none">
                         <img src={Frame1}/>
                     </div>
                 </div>

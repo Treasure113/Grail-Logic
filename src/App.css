@@ -3,6 +3,7 @@
 @import "@fontsource/inter"; 
 @import "@fontsource/inter/500.css"; 
 @import "@fontsource/inter/700.css";
+@import "@fontsource/inter/400-italic.css";
 
 @import "@fontsource/rethink-sans/400.css";
 @import "@fontsource/rethink-sans/500.css";
@@ -109,6 +110,14 @@
 
 .no-scrollbar::-webkit-scrollbar {
   display: none; /* Chrome, Safari */
+}
+
+button {
+  cursor: pointer;
+}
+
+.signup-page {
+  background-color: #0D0B1D !important;
 }
 
 

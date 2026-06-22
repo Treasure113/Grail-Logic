@@ -1,17 +1,70 @@
 import { MoveRight } from 'lucide-react';
 
-function FooterLinks({link1, link2, link3, link4, link5, text}) {
-    return (
-        <div className='flex flex-col gap-4 text-white text-sm font-light'>
-            <p className='!text-[12px] opacity-50'>{text}</p>
-            <a>{link1}</a>
-            <a>{link2}</a>
-            <a>{link3}</a>
-            <a>{link4}</a>
-            <a>{link5}</a>
-        </div>
-    );
-};
+const Links = [
+    {
+        heading: 'Platform',
+        links: [
+            {
+                label: 'How it works',
+                href: '/how-it-works'
+            },
+            {
+                label: 'Get Started',
+                href: '/get-started'
+            },
+            {
+                label: 'FAQs',
+                href: '/FAQs'
+            },
+        ]
+    },
+    {
+        heading: 'Company',
+        links: [
+            {
+                label: 'About Us',
+                href: '/about-us'
+            },
+            {
+                label: 'Terms & Condition',
+                href: '/terms-and-condition'
+            },
+            {
+                label: 'Privacy Policy',
+                href:'/privacy-policy'
+            },
+            {
+                label: 'Contact Us',
+                href: '/contact-us'
+            },
+            {
+                label: 'FAQs',
+                href: '/FAQs'
+            }
+        ]
+    },
+    {
+        heading: 'Connect',
+        links: [
+            {
+                label: 'X(Formerly Twitter)',
+                href: '/X'
+            },
+            {
+                label: 'Discord',
+                href: '/Discord'
+            },
+            {
+                label: 'LinkedIn',
+                href: '/LinkedIn'
+            },
+            {
+                label: 'Instagram',
+                href: '/Instagram'
+            }
+        ]
+    }
+];
 
 
 export default function Footer() {
@@ -48,33 +101,26 @@ export default function Footer() {
 
                 {/* Footer Links */}
                 <div className='flex flex-col gap-6 md:flex-row md:gap-24'>
-
-                    <FooterLinks 
-                        text='Platform'
-                        link1='How it Works'
-                        link2='Get Started'
-                        link3='FAQs'
-                    />
-
-                    <FooterLinks 
-                        text='Company'
-                        link1='About Us'
-                        link2='Terms & Conditions'
-                        link3='Privacy Policy'
-                        link4='Contact Us'
-                        link5='FAQs'
-                    />
-
-                    <FooterLinks 
-                        text='Connect'
-                        link1='X(Formerly Twitter)'
-                        link2='Discord'
-                        link3='LinkedIn'
-                        link4='Instagram'
-                    />
-                
+                    {
+                                Links.map((section, index) => {
+                                    return (
+                                        <div className='flex flex-col gap-4 text-white text-sm font-light'>
+                                            <p className='!text-[12px] opacity-50'>{section.heading}</p>
+                                            {
+                                                section.links.map((link) => (
+                                                    <a key={link.href} href={link.href} className='hover:underline underline-white underline-offset-5'>
+                                                        {link.label}
+                                                    </a>
+                                                ))
+                                            }
+                                        </div>
+                                    );
+                                })
+                    }
                 </div>
             </div>
+
+
 
             {/* Bottom */}
             <div className='text-center flex flex-col gap-5 lg:gap-24 max-w-full h-full'>
