@@ -120,4 +120,52 @@ button {
   background-color: #0D0B1D !important;
 }
 
+.trade-table {
+  margin-top: 30px;
+  width: 100%;
+  border-collapse: separate; /* Critical: Merges double cell borders into single straight lines */
+  background: linear-gradient(to right, #100E24, #161233);
+  color: #fff;
+  border: 1px solid #1D1B3D;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-spacing: 0;
+  overflow:hidden;
+  
+}
+
+ 
+.trade-table td {
+  padding: 30px 22px;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 1px solid #1D1B3D; /* Continuous straight line across rows */
+  
+}
+
+.trade-table th {
+  padding: 15px 22px;
+  text-align: left;
+  border-bottom: 1px solid #1D1B3D; 
+  font-size: 12px;
+  color:#E5E5E5;
+  background-color: #0D0B1D;
+}
+
+/* Easy row highlighting */
+.trade-table .highlighted-row {
+  background-color: rgba(255, 255, 255, 0.05); 
+}
+
+.trade-table th:first-child,
+.trade-table td:first-child {
+  padding-left: 22px; /* Restores your original 22px left margin */
+}
+
+.trade-table td,
+.trade-table th {
+  padding: clamp(8px, 2vw, 22px);
+}
+
+
 

@@ -191,45 +191,27 @@ function Rating() {
     )
 }
 
-export function HeroText({maintext, subtext}) {
-    const [modal, setModal] = useState(false);
-    const [userName, setUserName] = useState('');
-    return (
-    
-                    <div className='relative flex flex-col mx-auto w-fit gap-12 items-center justify-center'>                   
-                        <div className='flex flex-col items-center justify-center max-w-full text-center  gap-6'>
-                            <div>
-                                <h1 className='text-[28px] md:text-md lg:text-5xl font-[700] tracking-wide leading-tight w-[343px] lg:w-[800px] h-auto text-center'>
-                                    {maintext}
-                                </h1>
-                            </div>
-                            <div className='w-[360px]'>
-                                <p className='text-white leading-[150%]'>
-                                    {subtext}
-                                </p>
-                            </div>
-                        </div>
+// ConnectAccountModal.jsx
 
-                        
-                        <Button label="Connect your account" className='pt-4 pr-8 pb-4 pl-8 w-fit z-10' 
-                           onClick={() => {
-                            console.log('clicked');
-                            setModal(true)}} 
-                        />
+export function ConnectAccountModal({
+  modal,
+  setModal,
+  userName,
+  setUserName,
+  isClosed = true
+}) {
+  if (!modal) return null;
 
-                        
-                        {modal && (
-                                <div className="fixed inset-0 z-[9999] backdrop-blur-lg overflow-y-auto flex flex-col items-center justify-center bg-black/50"
-                                    onClick={(e) => setModal(false)}
-                                >
-
-                                    
-                                    
-                                    <div className="relative flex flex-col gap-6 bg-[#100E24] border border-[#3B3C9A99] rounded-lg p-6 w-[90%] max-w-[500px] transition duration-300"
-                                        onClick={(e) => e.stopPropagation()}
-                                    >
-
-                                        <img src={Logo2} className='w-[159.74px] h-[41px] object-cover'></img>
+  return (
+    <div
+      className="fixed inset-0 z-[9999] backdrop-blur-lg bg-black/50 flex items-center justify-center"
+      onClick={() => setModal(false)}
+    >
+      <div
+        className="relative flex flex-col gap-6 bg-[#100E24] border border-[#3B3C9A99] rounded-lg p-6 w-[90%] max-w-[500px]"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <img src={Logo2} className='w-[159.74px] h-[41px] object-cover'></img>
                                     
                                             <div className='flex flex-col gap-1 mt-5 lg:gap-2 text-[24px]'>
                                                 <h1 classname=''>Link Your Trading Account </h1>
@@ -239,12 +221,15 @@ export function HeroText({maintext, subtext}) {
                                             
 
                                         {/* Close button */}
-                                        <button
+                                        {isClosed && (
+                                            <button
                                             onClick={() => setModal(false)}
                                             className="absolute top-5 right-4 text-white text-xl hover:text-[#5759D0]"
                                         >
                                             ✕
                                         </button>
+                                        )}
+                                        
 
                                         <div className='flex flex-col gap-4'>
                                             <InputField
@@ -293,16 +278,50 @@ export function HeroText({maintext, subtext}) {
                                             </button>
                                         </div>
 
-                                        
-                                    </div>
-                                </div>
-                            )}
+      </div>
+    </div>
+  );
+} 
+
+export function HeroText({maintext, subtext}) {
+      const [modal, setModal] = useState(false);
+    const [userName, setUserName] = useState('');
+    return (
+    
+                    <div className='relative flex flex-col mx-auto w-fit gap-12 items-center justify-center'>                   
+                        <div className='flex flex-col items-center justify-center max-w-full text-center  gap-6'>
+                            <div>
+                                <h1 className='text-[28px] md:text-md lg:text-5xl font-[700] tracking-wide leading-tight w-[343px] lg:w-[800px] h-auto text-center'>
+                                    {maintext}
+                                </h1>
+                            </div>
+                            <div className='w-[360px]'>
+                                <p className='text-white leading-[150%]'>
+                                    {subtext}
+                                </p>
+                            </div>
+                        </div>
+
+                        
+                        <Button label="Connect your account" className='pt-4 pr-8 pb-4 pl-8 w-fit z-10' 
+                           onClick={() => {
+                            console.log('clicked');
+                            setModal(true)}} 
+                        />
+
+                         <ConnectAccountModal
+                            modal={modal}
+                            setModal={setModal}
+                            userName={userName}
+                            setUserName={setUserName}
+                        />
                     </div>
     )
 }
 
 
 export default function HeroSection() {
+  
     return (
         <section className='min-h-screen'>
             <div className='relative flex flex-col gap-24'>
@@ -311,9 +330,9 @@ export default function HeroSection() {
                 
                     <HeroText maintext='Trade smarter with automated strategy execution' 
                               subtext='Link your trading account to our performance proven system and mirror trades in real time from our master account.'
+                              
                     />
                 
-
                 <Vector />
 
                 <VectorDeskTop />

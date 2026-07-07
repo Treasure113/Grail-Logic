@@ -20,7 +20,7 @@ function Circle() {
     )
 }
 
-function List({text}) {
+export function List({text}) {
     return (
         <div className="flex gap-2 items-center">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,7 +48,7 @@ function Circle2() {
     );
 };
 
-function PricingCard({type, description, price, subcontentlabel, list}) {
+export function PricingCard({type, description, price, subcontentlabel, list}) {
     return (
         <div className="bg-gradient-to-b from-[#3B3C9A1A] via-[#3B3C9A05] to-[#3B3C9A0F] p-6 rounded-[32px] border border-[#5E5FBE80] flex flex-col gap-8 backdrop-blur-lg">
             <div className="flex flex-col gap-6">
@@ -78,7 +78,7 @@ function PricingCard({type, description, price, subcontentlabel, list}) {
     )
 }
 
-function PricingCard2() {
+export function PricingCard2() {
     return (
         <div className="bg-gradient-to-b from-[#2BFFFF1F] via-[#2BFFFF0A] to-[#2BFFFF12] p-6 rounded-[32px] border border-[#5E5FBE80] flex flex-col gap-8 backdrop-blur-lg">
             <div className="flex flex-col gap-6">
@@ -122,6 +122,20 @@ function PricingCard2() {
     )
 }
 
+ export const ToggleButton = () => {
+    return (
+       <div className="rounded-[12px] border w-[300px]  lg:max-w-[300px] border-[#1D1B3D] bg-[#0D0B1D] flex gap-4 p-1 items-center justify-between">
+                                <div className="bg-[#0056D2] rounded-[8px] shadow-[inset_0_0px_2px_#FFFFFF]">
+                                    <p className="text-white px-4 py-2 ">Monthly</p>
+                                </div>
+
+                                <div>
+                                    <span className="text-[#C5C5C5]">Annually (Save 15%)</span>
+                                </div>
+        </div>
+    )
+ }
+
 
 
 
@@ -153,15 +167,8 @@ export default function HeroSection() {
                             <VectorDeskTop 
                             className='absolute'
                         />
-                            <div className="rounded-[12px] border w-[300px]  lg:max-w-[300px] border-[#1D1B3D] bg-[#0D0B1D] flex gap-4 p-1 items-center justify-between">
-                                <div className="bg-[#0056D2] rounded-[8px] shadow-[inset_0_0px_2px_#FFFFFF]">
-                                    <p className="text-white px-4 py-2 ">Monthly</p>
-                                </div>
-
-                                <div>
-                                    <span className="text-[#C5C5C5]">Annually (Save 15%)</span>
-                                </div>
-                            </div>
+                            
+                            <ToggleButton />
 
                             {/* Price Cards */}
                             <div className="flex flex-col lg:flex-row gap-6">

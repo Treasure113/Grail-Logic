@@ -38,7 +38,7 @@ export default function OurStory() {
                    Grail Logic was created to solve common trading challenges like market volatility and unreliable signals that lead to financial losses. 
                    Our founders built a trade mirroring bot to strictly follow disciplined strategies to help simplify smart trading for everyone, including beginners.
                    What first began as a private tool quickly gained demand for its amazing benefits.
-                   <span className="hover:text-[#CCCCCC]">Today, Grail Logic can seamlessly mirror trades from a master account to users securely and transparently.</span>
+                   <span className="hover:text-[#CCCCCC] transition duration-300">Today, Grail Logic can seamlessly mirror trades from a master account to users securely and transparently.</span>
                 </h2>
             </div>
 
@@ -49,7 +49,7 @@ export default function OurStory() {
             />
         </div>
 
-            <div className="p-6 flex flex-col gap-12 lg:grid lg:grid-cols-3 lg:grid-rows-3 lg:p-12">
+            <div className="p-6 flex flex-col gap-12 lg:grid lg:grid-cols-3 lg:grid-rows-3 lg:p-24">
                <GridArrangement 
                     icon={
                         <svg width="28" height="21" viewBox="0 0 28 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -169,7 +169,7 @@ export default function OurStory() {
                     />
             </div>
 
-            <div className="flex flex-col gap-12 py-6">
+            <div className="flex flex-col gap-12 py-6 lg:py-0">
                 <div className="flex flex-col justify-center gap-4 items-center text-center lg:gap-8">
                     <h1 className="!text-black text-[24px] lg:text-[44px]">Our Journey So Far</h1>
                     <p className="text-sm opacity-50 w-3/4 lg:text-lg">We started small and grew into a trusted platform for smart trading tools.</p>

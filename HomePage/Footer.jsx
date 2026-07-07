@@ -123,9 +123,12 @@ export default function Footer() {
 
 
             {/* Bottom */}
-            <div className='text-center flex flex-col gap-5 lg:gap-24 max-w-full h-full'>
-                <div className='whitespace-nowrap'>
-                    <h1 className='text-2xl font-bold tracking-[4%] lg:text-[160.13px] underline decoration-1 !text-[#222222] md:text-[125px]'>GRAIL LOGIC</h1>
+            <div className='text-center flex flex-col gap-5 lg:gap-1 max-w-full h-full'>
+                <div className='whitespace-nowrap relative'>
+                    <div className=''>
+                        <h1 className='text-2xl font-bold tracking-[4%] lg:text-[160.13px] decoration-1 !text-[#222222] md:text-[125px]'>GRAIL LOGIC</h1>
+                    </div>
+                    <div className='absolute z-10 p-6 bg-[#0D0D0D] w-6xl bottom-1 left-88'></div>
                 </div>
                 <p className='text-[#626262] text-sm opacity-40'>© 2025 Grail Logic. All rights reserved.</p>
             </div>

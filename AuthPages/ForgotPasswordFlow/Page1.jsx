@@ -2,7 +2,6 @@ import {useState, useEffect} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { InputField } from '../../ContactPage/LetsTalk';
-// import { Logo } from '../HomePage/Header';
 
 
 export const Logo2 = '/smaller-logo.png';

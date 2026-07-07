@@ -1,6 +1,5 @@
 import {useState, useEffect} from 'react';
-import { Link } from 'react-router-dom';
-
+import { Link, useNavigate } from 'react-router-dom';
 import { Dot } from 'lucide-react';
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -66,12 +65,14 @@ export default function Login() {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
 
-    const handleLogin = (e) => {
+    const navigate = useNavigate()
+
+  const handleLogin = (e) => {
   e.preventDefault();
         setError('')
 
   if (!email.trim()) {
-    setError("Email is required");
+    setError("Incorrect Password or Email");
     setTimeout(() => {
         setError('')
     }, 2000);
@@ -80,7 +81,7 @@ export default function Login() {
   }
 
   if (!password.trim()) {
-    setError("Password is required");
+    setError("Incorrect Password or Email");
 
     setTimeout(() => {
         setError('')
@@ -88,7 +89,7 @@ export default function Login() {
 
     return;
   }
-    console.log('Login successful')
+    navigate('/dashboard')
 };
 
     useEffect(() => {
@@ -116,7 +117,9 @@ export default function Login() {
             )}
             <div className='p-3 lg:w-[600px] mx-auto flex-1 lg:h-[784px]'>
                     <div className='flex lg:p-12 lg:px-8 rounded-[8px] mt-[8rem] flex-col gap-6 bg-gradient-to-r from-[#100E24] to-[#100E24] border border-[#3B3C9A99] p-4'>
-                        <img src={Logo2} className='w-[159.74px] h-[41px] object-cover'></img>
+                        <Link to='/home'>
+                            <img src={Logo2} className='w-[159.74px] h-[41px] object-cover hover:opacity-80 cursor-pointer'></img>
+                        </Link>
 
                         <div className='flex flex-col gap-2 lg:mt-5 text-[24px]'>
                             <h1 classname=''>Welcome back </h1>
@@ -146,8 +149,11 @@ export default function Login() {
                                     {/* Button & Privacy Policy */}
                         <div className='flex flex-col gap-4'>
                                 
-                                <button className='w-full text-white rounded-[12px] bg-[#7C7CBB] px-4 py-[10px]'
+                                <button className={`w-full text-center text-white rounded-[12px] px-4 py-[10px] transition duration-200
+                                    ${email.trim() ? 'bg-[#3B3C9A]' : 'bg-[#7C7CBB]'}
+                                `}
                                     type='submit'
+                                    to='/dashboard'
                                 >
                                     Login
                                 </button>

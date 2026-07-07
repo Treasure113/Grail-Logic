@@ -7,22 +7,22 @@ import { Button } from './Header'
 
 const abstractBackground = '/Frame 971.png'
 
-function FAQCards({text, dropDownText}) {
+export function FAQCards({text, dropDownText}) {
     const [dropDown, setDropDown] = useState(false);
     return (
         <>
         <div className='relative flex flex-col gap-2'>
-            <button className="flex justify-between items-center"
+            <button className={`flex justify-between items-center`}
                 onClick={() => setDropDown(!dropDown)}
             >
-                    <h1 className="!text-black text-sm">
+                    <h1 className={`!text-black text-sm`}>
                         {text}
                     </h1>
 
                     {dropDown ? (
-                            <Minus size={20} />
+                            <Minus size={20}/>
                         ) : (
-                            <Plus size={20} />
+                            <Plus size={20}/>
                     )}
             </button>
                 {/* Demarcation */}
@@ -41,7 +41,7 @@ function FAQCards({text, dropDownText}) {
                         }
                     `}
                     >
-                    <p className="text-[#5A5A5A] text-sm">
+                    <p className={`text-[#5A5A5A] text-sm`}>
                     {dropDownText}
                     </p>
                 </div>

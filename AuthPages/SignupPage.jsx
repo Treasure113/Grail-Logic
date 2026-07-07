@@ -1,12 +1,12 @@
 import {useState, useEffect} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { Dot } from 'lucide-react';
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
 
 import { InputField } from '../ContactPage/LetsTalk';
-// import { Logo } from '../HomePage/Header';
+
 
 'use client';
 import { CheckCheck, Eye, EyeOff, X } from 'lucide-react';
@@ -56,8 +56,15 @@ const Incorrect = () => {
     );
 };
 
-export const PasswordInput = ({label, placeholder}) => {
-  const [password, setPassword] = useState('');
+const Info = () => {
+  return (
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10.0001 18.333C5.40841 18.333 1.66675 14.5913 1.66675 9.99967C1.66675 5.40801 5.40841 1.66634 10.0001 1.66634C14.5917 1.66634 18.3334 5.40801 18.3334 9.99967C18.3334 14.5913 14.5917 18.333 10.0001 18.333ZM9.37508 13.333C9.37508 13.6747 9.65842 13.958 10.0001 13.958C10.3417 13.958 10.6251 13.6747 10.6251 13.333V9.16634C10.6251 8.82467 10.3417 8.54134 10.0001 8.54134C9.65842 8.54134 9.37508 8.82467 9.37508 9.16634V13.333ZM10.7667 6.34967C10.7251 6.24134 10.6667 6.15801 10.5917 6.07467C10.5084 5.99967 10.4167 5.94134 10.3167 5.89967C10.2167 5.85801 10.1084 5.83301 10.0001 5.83301C9.89175 5.83301 9.78341 5.85801 9.68342 5.89967C9.58342 5.94134 9.49175 5.99967 9.40841 6.07467C9.33342 6.15801 9.27508 6.24134 9.23342 6.34967C9.19175 6.44967 9.16675 6.55801 9.16675 6.66634C9.16675 6.77467 9.19175 6.88301 9.23342 6.98301C9.27508 7.08301 9.33342 7.17467 9.40841 7.25801C9.49175 7.33301 9.58342 7.39134 9.68342 7.43301C9.88342 7.51634 10.1167 7.51634 10.3167 7.43301C10.4167 7.39134 10.5084 7.33301 10.5917 7.25801C10.6667 7.17467 10.7251 7.08301 10.7667 6.98301C10.8084 6.88301 10.8334 6.77467 10.8334 6.66634C10.8334 6.55801 10.8084 6.44967 10.7667 6.34967Z" fill="#E42B2B"/>
+    </svg>
+  );
+};
+
+export const PasswordInput = ({label, placeholder, password, setPassword}) => {
   const [isVisible, setIsVisible] = useState(false);
   const [showRequirements, setShowRequirements] = useState(false);
 
@@ -188,7 +195,7 @@ export default function Signup() {
         setError('')
 
   if (!email.trim()) {
-    setError("Email is required");
+    setError("Password is required");
     setTimeout(() => {
         setError('')
     }, 2000);
@@ -205,8 +212,9 @@ export default function Signup() {
 
     return;
   }
-    console.log('Login successful')
+     navigate("/dashboard")
 };
+
 
     useEffect(() => {
     // 1. Save your unique background class name
@@ -220,20 +228,17 @@ export default function Signup() {
       document.body.classList.remove(uniqueBgClass);
     };
   }, []);
+
+        const navigate = useNavigate()
     return (
         <>
-        <section id='signup' className="relative signup-page">
-            {error && (
-                <div className='absolute top-5 lg:left-[55rem] left-[6rem] bg-[#FBEBEC] border border-[#E42B2B] rounded-[6px] p-[12px] h-[44px] flex gap-2 items-center'>
-                    <Incorrect />
-                    <p className="text-[#131313] text-sm">
-                    {error}
-                    </p>
-                </div>
-            )}
+        <section id='signup' className="signup-page">
+          
             <div className='p-3 lg:w-[600px] mx-auto flex-1 lg:h-[784px]'>
                     <div className='flex lg:p-12 lg:px-8 rounded-[8px] mt-16 flex-col gap-6 bg-gradient-to-r from-[#100E24] to-[#100E24] border border-[#3B3C9A99] p-4'>
-                        <img src={Logo2} className='w-[159.74px] h-[41px] object-cover'></img>
+                      <Link to='/home'>
+                        <img src={Logo2} className='w-[159.74px] h-[41px] object-cover hover:opacity-80'></img>
+                      </Link>
 
                         <div className='flex flex-col mt-5 lg:gap-2 text-[24px]'>
                             <h1 classname=''>Start Mirroring Trades Today </h1>
@@ -250,11 +255,28 @@ export default function Signup() {
                                 onChange={(e) => setEmail(e.target.value)}
                                 />
 
-                                
-                            <PasswordInput 
-                                password={password}
-                                setPassword={setPassword}
-                            />
+
+                            <div className='relative'>  
+                              <PasswordInput 
+                                  password={password}
+                                  setPassword={setPassword}
+                                  label='Password'
+                                  placeholder='Enter your password'
+                                  
+                              />
+
+                                  {error && (
+                                <div className='absolute -bottom-6 -left-3 rounded-[6px]  p-[12px] h-[44px] flex gap-2 items-center'>
+                                    <Info />
+                                    <p className="text-[#E42B2B] text-sm">
+                                    {error}
+                                    </p>
+                                </div>
+                                )}
+                            </div>
+
+                            
+
                             
                             <div className='mb-12'>
                                 <FormControlLabel
@@ -269,7 +291,7 @@ export default function Signup() {
                                             },
 
                                             '& .MuiSvgIcon-root': {
-                                                borderRadius: '6px', // 👈 this is the key
+                                                borderRadius: '6px',
                                             },
                                         }}
                                         />
@@ -288,8 +310,11 @@ export default function Signup() {
                                     {/* Button & Privacy Policy */}
                         <div className='flex flex-col gap-4'>
                             
-                                <button className='w-full text-white rounded-[12px] bg-[#7C7CBB] px-4 py-[10px]'
+                                <button  className={`w-full text-center text-white rounded-[12px] px-4 py-[10px] transition duration-200
+                                  ${email.trim() ? 'bg-[#3B3C9A]' : 'bg-[#7C7CBB]'}
+                                `}
                                     type='submit'
+                                    
                                 >
                                     Create account
                                 </button>

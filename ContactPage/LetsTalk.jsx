@@ -28,7 +28,8 @@ export function InputField({text, placeholder, className, isTextarea = false, va
             {isTextarea ? (
                 <textarea
                     placeholder={placeholder}
-                    className={`border w-full border-[#303030] text-white text-sm rounded-[4px] p-4 w-[300px] resize-none ${className}`}
+                    className={`border w-full border-[#303030] focus:blur-10 focus:shadow-[0_0_2px_#1B1EFF] focus:shadow-[#1B1EFF] focus:ring-2
+                        focus:ring-[#3B3C9A]/30 outline-none border focus:border-[#3B3C9A] transition text-white text-sm rounded-[4px] p-4 w-[300px] resize-none ${className}`}
                 />
             ) : (
                 <input
@@ -80,15 +81,19 @@ export default function LetsTalk() {
                         
                         <div className='flex flex-col gap-4'>
                             <div className='lg:flex lg:gap-4 lg:max-w-full'>
+                                <div className='w-1/2'>
                                 <InputField 
                                     text='First Name'
                                     placeholder='Enter your first name'
                                 />
+                                </div>
 
+                                <div className='w-1/2'>
                                 <InputField 
                                     text='Last Name'
-                                    placeholder='Enter your Last name'
+                                    placeholder='Enter your last name'
                                 />
+                                </div>
                             </div>
 
                             <InputField 
@@ -116,12 +121,8 @@ export default function LetsTalk() {
                                     borderColor: "#303030",
                                 },
 
-                                "&:hover fieldset": {
-                                    borderColor: "#FFD700",
-                                },
-
                                 "&.Mui-focused fieldset": {
-                                    borderColor: "#FFD700",
+                                    borderColor: "#3B3C9A",
                                 },
                                 },
 

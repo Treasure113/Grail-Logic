@@ -4,32 +4,6 @@ import Footer from "../HomePage/Footer"
 import HeroSection from "./HeroSection"
 import OurStory from "./OurStory";
 
-
-// export default function CompanyPage() {
-//     return (
-//         <div>
-//             <div className="max-w-full overflow-x-hidden flex flex-col lg:bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px)]
-//                      bg-[size:60px_100%] mx-auto"
-//             >    
-//                 <Header /> 
-//                 <HeroSection />   
-//             </div>
-
-//             <main 
-//             className="bg-[#FFFFFF] min-h-screen mx-auto"
-//             >
-//                  <OurStory />             
-//             </main>
-            
-        
-        
-//             <div>
-//                 <Footer />
-//             </div>
-//         </div>
-//     );
-// };
-
 const Frame1 = '/Frame 967.png';
 const Frame2 = '/Frame 968.png';
 
