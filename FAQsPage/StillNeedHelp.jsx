@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom'
+import { Testimonials } from '../HomePage/Our-It-Work-Section';
 
 const image3 = '/testimony-1.png'
 
@@ -72,94 +73,16 @@ function Bell() {
     );
 };
 
-function Testimonial() {
-    return (
-                <div className="flex flex-col justify-center py-12 items-center gap-12 md:py-12">
-                    <div className="flex flex-col justify-center items-center gap-2 lg:gap-8">
-                        <h1 className="text-[20px] lg:text-[44px]">What Our Traders Are Saying</h1>
-                        <p className="text-[#EEEEEE] text-center opacity-80 text-sm md:w-1/2">These are real people with real results. Hear how Grail Logic is helping users grow their trading accounts with confidence and zero stress.</p>
-                    </div>
-
-                    <div className="w-full no-scrollbar flex gap-2 flex-nowrap overflow-x-scroll md:gap-4 lg:max-w-full">
-                        <div className="relative shrink-0">
-                            {/* Overlay */} <div className="absolute z-10 inset-0 w-[160px] h-[220px] top-0 left-0 bg-gradient-to-r from-black to-[#0D0D0D00]"></div>
-                            <div className="relative p-3 flex flex-col gap-3 rounded-md border border-gradient-to-r from-[#222222] to-[#22222200] ">
-                                <p className="text-white text-left text-sm leading-[28px] opacity-60 w-[18rem]">
-                                    I knew nothing about forex before joining Grail Logic. After connecting my account, I started seeing consistent results within the first few weeks. I’ve never looked back.
-                                </p>
-                                <div className="flex gap-2">
-                                    <img src={image3} className="rounded-full"/>
-                                    <div className="flex flex-col gap-1">
-                                        <p className="text-white text-sm">Tolu A.</p>
-                                        <p className="text-sm text-white opacity-50">First-time Trader</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="relative shrink-0">
-                            {/* Overlay */} <div className="absolute z-10 inset-0 w-[160px] h-[220px] top-0 left-0 bg-gradient-to-r from-black to-[#0D0D0D00]"></div>
-                            <div className="relative p-3 flex flex-col gap-3 rounded-md border border-gradient-to-r from-[#222222] to-[#22222200] ">
-                                <p className="text-white text-left text-sm leading-[28px] opacity-60 w-[18rem]">
-                                    I knew nothing about forex before joining Grail Logic. After connecting my account, I started seeing consistent results within the first few weeks. I’ve never looked back.
-                                </p>
-                                <div className="flex gap-2">
-                                    <img src={image3} className="rounded-full"/>
-                                    <div className="flex flex-col gap-1">
-                                        <p className="text-white text-sm">Tolu A.</p>
-                                        <p className="text-sm text-white opacity-50">First-time Trader</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="relative shrink-0">
-                            {/* Overlay */} <div className="absolute z-10 inset-0 w-[160px] h-[220px] top-0 left-0 bg-gradient-to-r from-black to-[#0D0D0D00]"></div>
-                            <div className="relative p-3 flex flex-col gap-3 rounded-md border border-gradient-to-r from-[#222222] to-[#22222200] ">
-                                <p className="text-white text-left text-sm leading-[28px] opacity-60 w-[18rem]">
-                                    I knew nothing about forex before joining Grail Logic. After connecting my account, I started seeing consistent results within the first few weeks. I’ve never looked back.
-                                </p>
-                                <div className="flex gap-2">
-                                    <img src={image3} className="rounded-full"/>
-                                    <div className="flex flex-col gap-1">
-                                        <p className="text-white text-sm">Tolu A.</p>
-                                        <p className="text-sm text-white opacity-50">First-time Trader</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="relative shrink-0">
-                            {/* Overlay */} <div className="absolute z-10 inset-0 w-[160px] h-[220px] top-0 left-0 bg-gradient-to-r from-black to-[#0D0D0D00]"></div>
-                            <div className="relative p-3 flex flex-col gap-3 rounded-md border border-gradient-to-r from-[#222222] to-[#22222200] ">
-                                <p className="text-white text-left text-sm leading-[28px] opacity-60 w-[18rem]">
-                                    I knew nothing about forex before joining Grail Logic. After connecting my account, I started seeing consistent results within the first few weeks. I’ve never looked back.
-                                </p>
-                                <div className="flex gap-2">
-                                    <img src={image3} className="rounded-full"/>
-                                    <div className="flex flex-col gap-1">
-                                        <p className="text-white text-sm">Tolu A.</p>
-                                        <p className="text-sm text-white opacity-50">First-time Trader</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-    )
-}
-
 export default function StillNeedHelp({isTestimonial=true, className, className2, className3, h1}) {
     return (
         <section id='StillNeedHelp?' className={`mt-16 ${className3}`}>
             <div className={`flex flex-col gap-[40px] p-2 ${className2}`}>
                 <div className="text-center flex flex-col gap-4 md:gap- mt-8">
-                    <h1 className={`text-[24px] tracking-tight md:text-[44px] ${h1}`}>Still need help?</h1>
+                    <h1 className={`text-[24px] tracking-tight ${h1}`}>Still need help?</h1>
                     <p className="text-white text-sm opacity-50 leading-relaxed md:w-full">If you didn’t find what you’re looking for, we’re here to assist you directly.</p>
                 </div>
 
-                <div className={`flex flex-col gap-4 lg:flex-row justify-center ${className}`}>
+                <div className={`flex flex-col gap-4 lg:gap-6 lg:flex-row justify-center ${className}`}>
                     
                     <HelpCard 
                      icon={
@@ -190,8 +113,8 @@ export default function StillNeedHelp({isTestimonial=true, className, className2
                 </div>
 
                 {isTestimonial && (
-                    <div className="w-full mt-6 border-t bg-[radial-gradient(ellipse_100%_5%_at_top,#28282C,#000000_40%)] [mask-image:linear-gradient(to_right,transparent,black_5%,white_80%,transparent)]">
-                        <Testimonial />
+                    <div className="w-full mt-6 lg:mt-24 border-t bg-[radial-gradient(ellipse_100%_2%_at_top,#28282C,#0D0D0D_40%)] [mask-image:linear-gradient(to_right,transparent,black_5%,white_80%,transparent)]">
+                        <Testimonials />
                     </div>
                 )}
             </div>

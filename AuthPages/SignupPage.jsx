@@ -13,9 +13,9 @@ import { CheckCheck, Eye, EyeOff, X } from 'lucide-react';
 import React, { useMemo } from 'react';
 const PASSWORD_REQUIREMENTS = [
   { regex: /.{8,}/, text: 'Minimum of 8 characters' },
-  { regex: /[0-9]/, text: 'At least one uppercase letter' },
+  { regex: /[A-Z]/, text: 'At least one uppercase letter' },
   { regex: /[a-z]/, text: 'At least 1 lowercase letter' },
-  { regex: /[A-Z]/, text: 'At least one number' },
+  { regex: /[0-9]/, text: 'At least one number' },
   { regex: /[!-/:-@[-`{-~]/, text: 'At least one special character (!”#$ )' },
 ];
 const STRENGTH_CONFIG = {
@@ -67,11 +67,12 @@ const Info = () => {
 export const PasswordInput = ({label, placeholder, password, setPassword}) => {
   const [isVisible, setIsVisible] = useState(false);
   const [showRequirements, setShowRequirements] = useState(false);
-
+  
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const calculateStrength = useMemo(() => {
     const requirements = PASSWORD_REQUIREMENTS.map((req) => ({
-      met: req.regex.test(password),
+      met: req.regex.test(password || ''),
       text: req.text,
     }));
     return {
@@ -232,10 +233,10 @@ export default function Signup() {
         const navigate = useNavigate()
     return (
         <>
-        <section id='signup' className="signup-page">
+        <section id='signup' className="signup-page main-container flex-1 py-24 min-h-screen">
           
             <div className='p-3 lg:w-[600px] mx-auto flex-1 lg:h-[784px]'>
-                    <div className='flex lg:p-12 lg:px-8 rounded-[8px] mt-16 flex-col gap-6 bg-gradient-to-r from-[#100E24] to-[#100E24] border border-[#3B3C9A99] p-4'>
+                    <div className='flex lg:py-8 lg:px-8 rounded-[8px] flex-col gap-6 bg-gradient-to-r from-[#100E24] to-[#100E24] border border-[#3B3C9A99] p-4'>
                       <Link to='/home'>
                         <img src={Logo2} className='w-[159.74px] h-[41px] object-cover hover:opacity-80'></img>
                       </Link>

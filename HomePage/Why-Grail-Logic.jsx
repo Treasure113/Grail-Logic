@@ -1,5 +1,5 @@
-const abstractBackground1 = '/Frame 969.png'
-const abstractBackground2 = '/Frame 970.png'
+export const abstractBackground1 = '/Abstract Background.png'
+export const abstractBackground2 = '/Top.png'
 const image = '/brokerage-specialist.jpg'
 const overlayImage = '/overlay-image.png'
 const image2 = '/ceo-grail-logic.png'
@@ -9,9 +9,14 @@ const image2 = '/ceo-grail-logic.png'
 export function Data({data, text, className}) {
 
     return (
-        <div className={`flex flex-col w-full gap-8 bg-[#FFFFFF] p-8 lg:px-25 lg:text-center lg:items-center ${className}`}>
-            <h1 className="!text-black text-[44px]">{data}</h1>
-            <p className="opacity-50">{text}</p>
+        <div className={`flex flex-1 flex-col w-full gap-8 bg-[#FFFFFF] p-8 lg:p-18 lg:text-center lg:items-center ${className}`}>
+            <div>
+                <h1 className="!text-black text-[44px] lg:text-[64px]">{data}</h1>
+            </div>
+
+            <div className=''>
+                <p className="opacity-50 lg:text-[18px]">{text}</p>
+            </div>
         </div>
     )
 
@@ -20,13 +25,13 @@ export function Data({data, text, className}) {
 export function GridArrangement({icon, label, description}) {
     return (
         
-            <div className='relative h-[165x] bg-white border border-neutral-100 rounded-[16px]  flex flex-col gap-6 pt-[40px] pr-[30px] pb-[30px] pl-[30px]'>     
+            <div className='relative bg-white border border-neutral-100 rounded-[16px] lg:max-w-[510.67px]  flex flex-col gap-6 pt-[40px] pr-[30px] pb-[30px] pl-[30px]'>     
                 <div className="absolute -top-6 left-5 bg-white px-3 py-2 ">      
                     {icon}
                 </div> 
 
-                <div className="top-10 flex flex-col gap-2 px-1">
-                    <h2 className="font-bold !text-black !text-[16px] !md:text-md !lg:text-lg">{label}</h2>
+                <div className="top-10 flex flex-col gap-2 px-1 lg:max-w-[346.67px]">
+                    <h2 className="font-bold !text-black !text-[16px] !md:text-md !lg:text-[20px]">{label}</h2>
                     <p className="opacity-50">{description}</p>
                 </div>
             </div>
@@ -39,15 +44,19 @@ export function WhyTrustGrailLogic({text1, text2}) {
     return (
         <div>
                 <div>
-                     <img src={abstractBackground1} className="w-full h-[173.82px] absolute z-10 "></img>
+                    <div>
+                        <img src={abstractBackground1} className="w-full h-[200.82px] lg:h-[342px] absolute z-10 object-fit"></img>
+                    </div>
                     
-                    <img src={abstractBackground2} className="w-full h-[173.82px] absolute"></img>
+                    <div className="flex justify-center">
+                        <img src={abstractBackground2} className="w-full   lg:max-w-[881px] lg:h-[320px] absolute"></img>
+                    </div>
                 </div>
-                <div className="relative text-center flex flex-col gap-4 lg:gap-6 py-16 items-center ">
+                <div className="relative text-center flex flex-col gap-4 lg:gap-8 py-12 lg:mt-[120px] items-center ">
                     <h1 className="!text-black text-[24px] md:text-md lg:text-[44px] font-[700]">
                         {text1}
                     </h1>
-                    <p className="opacity-50 w-[270.04px] text-sm md:text-md lg:text-lg lg:w-[500px]">
+                    <p className="w-[270.04px] text-sm md:text-md lg:text-lg text-[#5A5A5A] lg:w-[500px]">
                         {text2}
                     </p>
                 </div>
@@ -57,21 +66,21 @@ export function WhyTrustGrailLogic({text1, text2}) {
 
 export function OverlayedDivAndAnalysis({className, className2}) {
     return (
-    <div className={`relative w-full aspect-[4/3] md:aspect-[16/9] bg-white flex flex-col ${className}`}>
-                    <div className={`${className2}`}>
-                        <div className="absolute inset-0 z-10 w-full h-[800px] lg:h-[1000px] p-6 lg:p-24 ">
+    <div className={`relative w-full mx-auto aspect-[4/3] md:aspect-[16/9] bg-white flex flex-col ${className}`}>
+                    <div className={`${className2} relative w-full -mb-20`}>
+                        <div className="absolute inset-0 z-10 w-full h-[800px] lg:max-w-[1780px] lg:h-[780px] p-6 lg:p-24">
                             <img src={overlayImage} className="w-full h-full object-cover object-right lg:object-top rounded-2xl bg-gradient-to-r from-[#3E3E3EB2] to-[#3E3E3E66] opacity-[50%]" />
                         </div>
 
-                        <div className='w-full h-[800px] lg:h-[1000px] p-6 lg:p-24'>
-                            <img src={image} className="w-full h-full object-cover object-[15%_center] lg:object-top md:max-w-full lg:max-w-full rounded-2xl opacity-80" />
+                        <div className='w-full h-[800px] lg:max-w-[1780px] lg:h-[780px] p-6 lg:p-24'>
+                            <img src={image} className="w-full h-full object-cover object-[15%_center] lg:object-top md:max-w-full lg:max-w-full rounded-2xl opacity-100" />
                         </div>
                     </div>
 
             {/* Text */}
 
-                <div className="absolute z-20 bottom-[38rem] left-[3rem] lg:bottom-[18rem] lg:left-[8rem] flex flex-col gap-6">
-                    <h1 className="text-[24px] w-3/4 lg:w-1/2 md:w-1/2">Our AI engine adapts to market conditions and <span className='hover:text-gray-400'>
+                <div className="absolute z-20 bottom-[32rem] left-[3rem] lg:top-[31rem] lg:left-[8rem] flex flex-col gap-6">
+                    <h1 className="text-[24px] w-3/4 lg:w-1/2 md:w-1/2">Our AI engine adapts to market conditions and <span className='hover:text-gray-400 transition duration-300'>
                         executes data-driven trades with consistency.</span> 
                     </h1>
 
@@ -86,7 +95,7 @@ export function OverlayedDivAndAnalysis({className, className2}) {
 
 
                 {/* Analysis */}
-                <div className="flex flex-col gap-6 lg:flex-row lg:gap-x-2 bg-[#FAFAF9] py-6 lg:py-3">
+                <div className="flex flex-col gap-6 lg:mb-32 lg:-mt-1 mt-12 px-2 rounded-lg w-full mx-auto lg:max-w-[1200px] lg:flex-row lg:gap-x-2 bg-[#FAFAF9] py-2">
                     <Data 
                         data = '1.8x'
                         text = 'Monthly returns on investments'
@@ -110,7 +119,7 @@ export function OverlayedDivAndAnalysis({className, className2}) {
 export default function WhyGrailLogic() {
     return (
         <>
-            <section className="py-4 relative w-full lg:max-w-full flex flex-col">
+            <section className="relative w-full lg:max-w-full flex flex-col">
                 
                 <WhyTrustGrailLogic 
                     text1='Why Traders Trust Grail Logic'
@@ -120,7 +129,8 @@ export default function WhyGrailLogic() {
 
             {/* Grid Arrangement */}
 
-                <div className="w-full flex flex-col gap-x-8 gap-y-5 lg:grid lg:grid-cols-3 lg:p-24">
+                <div className="w-full lg:max-w-[1800px] mx-auto py-6 gap-x-5 flex flex-col gap-y-6 lg:grid lg:grid-cols-3 lg:px-24 lg:py-12">
+                    
                     <GridArrangement 
                     icon={
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -243,6 +253,7 @@ export default function WhyGrailLogic() {
                         description = 'Track every move. See results, trade history, and profit breakdowns from your secure dashboard.'
                     />
                 </div>
+                
             </section>
 
 

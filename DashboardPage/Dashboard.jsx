@@ -215,7 +215,7 @@ const AccountSync = ({status, setStatus, connected, setConnected}) => {
   };
 
     return (
-        <div className="lg:max-w-[1035px] flex flex-col gap-6 bg-gradient-to-r from-[#100E24] to-[#161233] p-[24px] rounded-[8px] border border-[#1D1B3D]">
+        <div className="lg:max-w-[720px] flex flex-col gap-6 bg-gradient-to-r from-[#100E24] to-[#161233] p-[24px] rounded-[8px] border border-[#1D1B3D]">
             <div>
                 <h1>Account Sync</h1>
             </div>
@@ -289,12 +289,12 @@ const AccountSync = ({status, setStatus, connected, setConnected}) => {
 }
 
 
-const AlertsAndUpdates = ({text, value, connected, status}) => {
+const AlertsAndUpdates = ({text, value, connected, status, className}) => {
     
         if (status === "connected" || status === "disconnected") {
     return (
-      <div className="text-white/70 text-sm p-4 border-b border-[#1D1B3D]">
-            <p className="">{text}</p>
+      <div className={`text-white/70 py-2 -mt-5 text-sm ${className}`}>
+            <p>{text}</p>
             {value}
       </div>
     );
@@ -350,7 +350,7 @@ export default function Dashboard() {
   
 
 return (
-    <main className="flex-1 min-h-screen overflow-auto p-6 flex flex-col gap-10 bg-[#0D0B1D]">
+    <main className="flex-1 min-h-screen lg:max-w-[1140px] overflow-auto p-6 flex flex-col gap-10 bg-[#0D0B1D]">
      
                 {/* Put your pages here */}
                 <h1 className="text-white text-[24px] font-bold border-b p-5 lg:-mt-8 border-[#171717] bg-[#0D0B1D]">
@@ -397,7 +397,7 @@ return (
                     />
                 </div>
                 
-                <div className="w-full grid grid-cols-1 lg:grid-cols-[1fr_500px] gap-6 lg:-translate-y-5 items-start overflow-hidden">
+                <div className="w-full grid grid-cols-1 lg:grid-cols-[1fr_350px] gap-6 lg:-translate-y-5 overflow-hidden">
                     {/* LEFT AREA */}
                     <div className="flex flex-col gap-6">
                         <div>
@@ -409,10 +409,10 @@ return (
                             />
                         </div>
     
-                        <div>
+                        <div className="">
                             <TradingLineChart 
                              h1= 'Trading Overview Chart'
-                             className='lg:max-w-[1035px]'
+                             className='lg:max-w-[720px] lg:mt-1'
                             />
                         </div>
                   </div>
@@ -438,12 +438,13 @@ return (
                                 </div>
                             ) :
     
-                            (<div className="flex flex-col gap-6 lg:gap-12">
+                            (<div className="flex flex-col gap-6 mt-2 lg:gap-12">
                                 <AlertsAndUpdates 
                                 text='New trade mirrored on EUR/USD.'
                                 value={
                                     <span className="text-[#29A645]">+$35</span>
                                 }
+                                className='border-b border-[#1D1B3D]'
     
                                 connected = {connected}
                                 status = {status}/>
@@ -453,6 +454,7 @@ return (
                                 value={
                                     <span>BUY EUR/USD – Lot 0.5.</span>
                                 }
+                                className='border-b border-[#1D1B3D]'
     
                                 connected = {connected}
                                 status = {status}
@@ -460,6 +462,8 @@ return (
     
                                 <AlertsAndUpdates 
                                 text='A mirrored trade closed with a loss.'
+                                className='border-b border-[#1D1B3D]'
+                                
                                 value={
                                     <span>SELL GBP/JPY – <span className="text-[#E42B2B]">-$125.40</span></span>
                                 }

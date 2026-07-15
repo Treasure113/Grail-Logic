@@ -21,24 +21,24 @@ function Brands({logo, alt}) {
 function TrustedBy({className}) {
     return (
      <>
-        {/* <BlurredDemarcationLine /> */}
+        
         
                     <div className={`flex flex-col relative items-center justify-center ${className}`}>
-                <div className='absolute lg:hidden bottom-12 w-full blur-lg bg-black p-12'></div>
+                <div className='absolute lg:hidden bottom-12 w-full blur-lg bg-black py-8'></div>
 
-                {/* Linear Gradient for Desktop */} <div className="absolute hidden lg:flex h-[232px] bottom-0 blur-lg w-full bg-gradient-to-r from-[#0D0D0D] to-[#0D0D0D]"></div>
+                {/* Linear Gradient for Desktop */} <div className="absolute hidden lg:flex h-[180px] bottom-3 blur-md w-full bg-gradient-to-r from-[#0D0D0D] to-[#0D0D0D]"></div>
                     
                         <div className={`absolute lg:hidden bottom-0 border-t bg-[radial-gradient(ellipse_100%_5%_at_top,#28282C,#000000_40%)]`}>
                             <div className="flex flex-col justify-center">
                             <div className='mx-auto lg:justify-center '>
-                                <div>
-                                <p className='text-white text-[14px] text-center md:text-md lg:text-[18px]'>
+                                <div className="flex justify-center ">
+                                <p className='text-white w-3/4 text-[14px] text-center md:text-md lg:text-[18px]'>
                                     Trusted by 1000+ businesses across the world
                                 </p>
                                 </div>
                             </div>
 
-                            <div className='flex items-center p-12 justify-center w-full py-6  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]'>
+                            <div className='flex items-center justify-center w-full py-3  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]'>
                                 <Brands logo={synergy} alt="Synergy" />
                                 <Brands logo={lumina} alt="Lumina" />
                                 <Brands logo={velocity} alt="Velocity" />
@@ -56,17 +56,20 @@ function TrustedBy({className}) {
 
 export default function HeroSection() {
     return (
-        <section className="mt-12">
+        <section className=" mt-12 lg:mt-24 overflow-hidden">
             <div className="flex flex-col gap-12">
                 <div className="text-center flex flex-col gap-4 items-center justify-center lg:w-[971px] mx-auto">
                     <h1 className="text-[28px] leading-tight lg:text-[64px] lg:leading-[120%]">We’re on a mission to simplify <span className="text-[#C3C3C3]">automated trading</span></h1>
-                    <p className="text-white text-sm w-3/4 md:text-[18px]">Grail Logic was built to give everyday traders access to the kind of automation and accuracy only experts once had.</p>
+                    <p className="text-white/70 lg:text-white text-sm w-3/4 md:text-[18px]">Grail Logic was built to give everyday traders access to the kind of automation and accuracy only experts once had.</p>
                 </div>
 
                 <Vector />
-                <VectorDeskTop />
 
-                <div className="p-4 -mt-15 md:p-12 w-full lg:max-w-[1200px] mx-auto lg:-mt-24">
+                <div className="lg:mt-32">
+                    <VectorDeskTop />
+                </div>
+
+                <div className="p-4 -mt-28 md: w-full lg:max-w-[1200px] mx-auto lg:-mt-32">
                     <img src={image} className="rounded-xl"/>
                 </div>
 

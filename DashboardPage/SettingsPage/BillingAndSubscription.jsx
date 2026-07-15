@@ -104,7 +104,7 @@ function SearchBar() {
 
 export default function BillingAndSubscription() {
     return (
-        <div className="bg-gradient-to-r from-[#100E24] to-[#161233] w-full border border-[#1D1B3D] rounded-[8px] p-6 flex flex-col gap-12">
+        <div className="bg-gradient-to-r from-[#100E24] to-[#161233] w-full lg:max-w-[1140px] border border-[#1D1B3D] rounded-[8px] p-6 flex flex-col gap-12">
             <div className="flex justify-between">
                 <div className="flex flex-col gap-6">
                         <h1 className="text-[20px]">Billing & Subscription</h1>

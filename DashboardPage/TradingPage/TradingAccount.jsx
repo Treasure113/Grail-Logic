@@ -105,7 +105,7 @@ export default function TradingAccount() {
   const [userName, setUserName] = useState("");
 
   return (
-        <section className="mt-6">
+        <section className="mt-6 lg:max-w-[1140px]">
             <h1 className="text-white text-[24px] font-bold border-b p-5 lg:-mt-8 border-[#171717] bg-[#0D0B1D]">
                     Trading Account
             </h1>

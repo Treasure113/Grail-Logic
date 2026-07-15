@@ -2,24 +2,28 @@
 import { GridArrangement } from "../HomePage/Why-Grail-Logic"
 import { Data } from "../HomePage/Why-Grail-Logic"
 import { Card } from "../HomePage/FAQs-Section"
+import { abstractBackground1 } from "../HomePage/Why-Grail-Logic"
+import { abstractBackground2 } from "../HomePage/Why-Grail-Logic"
 
-const abstractBackground1 = '/Frame 969.png'
-const abstractBackground2 = '/Frame 970.png'
 
 
 export function WhyTrustGrailLogic({text1, text2}) {
     return (
-        <div className="mt-12">
+        <div>
                 <div>
-                      <img src={abstractBackground1} className="lg:hidden w-full h-[173.82px] absolute z-10 "></img> 
+                    <div>
+                        <img src={abstractBackground1} className="lg:hidden w-full h-[200.82px] lg:max-w-[881px] lg:h-[342px] absolute z-10 object-fit"></img>
+                    </div>
                     
-                    <img src={abstractBackground2} className="w-full h-[173.82px] lg:h-[342px] z-0 absolute lg:object-contain"></img>
+                    <div className="flex justify-center">
+                        <img src={abstractBackground2} className="w-full lg:max-w-[881px] lg:h-[320px] absolute"></img>
+                    </div>
                 </div>
-                <div className="relative text-center flex  flex-col gap-4 lg:gap-6 py-16 items-center justify-center lg:top-12">
+                <div className="relative text-center flex flex-col gap-4 lg:gap-8 py-12 lg:mt-[120px] items-center ">
                     <h1 className="!text-black text-[24px] md:text-md lg:text-[44px] font-[700]">
                         {text1}
                     </h1>
-                    <p className="opacity-50 w-1/2 text-sm md:text-md lg:text-lg lg:w-[500px]">
+                    <p className="w-[270.04px] text-sm md:text-md lg:text-lg text-[#5A5A5A] lg:w-[500px]">
                         {text2}
                     </p>
                 </div>
@@ -31,8 +35,8 @@ export function WhyTrustGrailLogic({text1, text2}) {
 export default function OurStory() {
     return (
         <section>
-         <div className="py-12">
-            <div className="p-6 flex flex-col lg:w-[1289px] lg:mx-auto lg:flex-row lg:justify-between lg:items-start lg:gap-[10rem]">
+         <div className="lg:py-12">
+            <div className="p-6 flex flex-col lg:w-[1289px] lg:mx-auto lg:flex-row lg:justify-between lg:items-start">
                 <p className="font-normal py-2">Our little story</p>
                 <h2 className="!text-black leading-[200%] !text-[18px] lg:!text-[32px] md:max-w-[809.6px]">
                    Grail Logic was created to solve common trading challenges like market volatility and unreliable signals that lead to financial losses. 
@@ -42,14 +46,14 @@ export default function OurStory() {
                 </h2>
             </div>
 
-         <div className="py-6 md:py-12">
+         <div className=" md:py-12">
             <WhyTrustGrailLogic 
                 text1='What We Stand For' 
                 text2='Committed to empowering traders with reliable tools for smarter decision-making.'
             />
         </div>
 
-            <div className="p-6 flex flex-col gap-12 lg:grid lg:grid-cols-3 lg:grid-rows-3 lg:p-24">
+            <div className="w-full lg:max-w-[1800px] mx-auto py-6 gap-x-5 flex flex-col gap-y-6 lg:grid lg:grid-cols-3 lg:px-24 lg:py-12">
                <GridArrangement 
                     icon={
                         <svg width="28" height="21" viewBox="0 0 28 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -169,13 +173,13 @@ export default function OurStory() {
                     />
             </div>
 
-            <div className="flex flex-col gap-12 py-6 lg:py-0">
-                <div className="flex flex-col justify-center gap-4 items-center text-center lg:gap-8">
+            <div className="flex flex-col gap-12">
+                <div className="flex flex-col justify-center gap-4 items-center text-center lg:gap-8 lg:py-12">
                     <h1 className="!text-black text-[24px] lg:text-[44px]">Our Journey So Far</h1>
-                    <p className="text-sm opacity-50 w-3/4 lg:text-lg">We started small and grew into a trusted platform for smart trading tools.</p>
+                    <p className="text-sm opacity-80 w-3/4 lg:text-lg">We started small and grew into a trusted platform for smart trading tools.</p>
                 </div>
 
-                <div className="w-full lg:max-w-1/2 lg:mx-auto flex flex-col gap-x-1 gap-y-2 lg:flex-row lg:gap-x-2 bg-[#FAFAF9] py-4 lg:py-3 lg:justify-center ">      
+                <div className="flex flex-col gap-2 lg:mb-32 lg:-mt-1 px-2 lg:max-w-[1200px] rounded-lg w-full mx-auto lg:flex-row lg:gap-y-2 lg:gap-x-2 bg-[#FAFAF9] py-2 ">      
                     <Data 
                         data = '$2.5M'
                         text = 'User volume mirrored'
@@ -183,7 +187,7 @@ export default function OurStory() {
                     />
 
                     <Data 
-                        data = '1200+'
+                        data = '1,200+'
                         text = 'Active trading users'
                         
                     />
@@ -202,7 +206,7 @@ export default function OurStory() {
                 </div>
                 
 
-                <div className="p-6">
+                <div className="p-6 lg:-mt-16">
                     <Card />
                 </div>
                 

@@ -18,12 +18,16 @@ const LeftArrow = () => {
     );
 };
 
-export default function ForgotPasswordThree({}) {
+export default function ForgotPasswordThree() {
     const [email, setEmail] = useState('');
     const [hasTyped, setHasTyped] = useState(false);
     const [verify, setVerify] = useState(false)
     const [token, setTokens] = useState('')
     const [otp, setOtp] = useState('');
+    
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    
 
     const navigate = useNavigate();
     
@@ -42,8 +46,8 @@ export default function ForgotPasswordThree({}) {
         <>
         
 
-        <section id='ForgotPassword(Page3)' className="relative flex flex-col items-center justify-center translate-y-24 pointers-event-none">
-            <Link className='text-white flex gap-2 items-center absolute w-[100px] h-12 z-0 inset-0 top-0 left-15'
+        <section id='ForgotPassword(Page3)' className="relative flex flex-col items-center justify-center pt-24 min-h-screen pointers-event-none">
+            <Link className='text-white flex gap-2 items-center absolute w-[100px] z-0 inset-0 -top-[47.2rem]  left-15'
                 onClick={() => navigate(-1)}
             >
                 <LeftArrow />
@@ -63,7 +67,7 @@ export default function ForgotPasswordThree({}) {
             )}
 
 
-            <div className='p-3 lg:w-[600px] mx-auto flex-1 lg:h-[784px]'>
+            <div className='p-3 lg:w-[600px] mx-auto flex-1'>
                     <div className='flex lg:p-12 lg:px-8 rounded-[8px] mt-[8rem] flex-col gap-6 bg-gradient-to-r from-[#100E24] to-[#100E24] border border-[#3B3C9A99] p-4'>
                         <img src={Logo2} className='w-[159.74px] h-[41px] object-cover'></img>
 
@@ -78,12 +82,17 @@ export default function ForgotPasswordThree({}) {
                                     <PasswordInput 
                                         label='Password'
                                         placeholder='Enter password'
+                                        password={password}
+                                        setPassword={setPassword}
                                     />
 
                                     <PasswordInput 
                                         label='Confirm Password'
                                         placeholder='Re-enter password'
+                                        password={confirmPassword}
+                                        setPassword={setConfirmPassword}
                                     />
+                                    
                                 </div>  
                             </div>
                                         {/* Button & Privacy Policy */}

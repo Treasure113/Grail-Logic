@@ -106,7 +106,7 @@ export default function Login() {
   }, []);
     return (
         <>
-        <section id='signup' className="relative signup-page flex flex-col items-center">
+        <section id='signup' className="relative signup-page flex flex-col items-center main-container">
             {error && (
                 <div className='absolute top-15 bg-[#FBEBEC] border border-[#E42B2B] rounded-[6px] p-[12px] h-[44px] flex gap-2 items-center'>
                     <Incorrect />
@@ -116,7 +116,7 @@ export default function Login() {
                 </div>
             )}
             <div className='p-3 lg:w-[600px] mx-auto flex-1 lg:h-[784px]'>
-                    <div className='flex lg:p-12 lg:px-8 rounded-[8px] mt-[8rem] flex-col gap-6 bg-gradient-to-r from-[#100E24] to-[#100E24] border border-[#3B3C9A99] p-4'>
+                    <div className='flex lg:py-8 lg:px-8 rounded-[8px] mt-[8rem] flex-col gap-6 bg-gradient-to-r from-[#100E24] to-[#100E24] border border-[#3B3C9A99] p-4'>
                         <Link to='/home'>
                             <img src={Logo2} className='w-[159.74px] h-[41px] object-cover hover:opacity-80 cursor-pointer'></img>
                         </Link>

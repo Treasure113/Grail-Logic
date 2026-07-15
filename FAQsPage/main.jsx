@@ -6,13 +6,13 @@ import StillNeedHelp from "./StillNeedHelp";
 
 export default function FAQsPage() {
     return (
-        <div className="bg-[#FFFFFF]">
+        <div className="bg-[#FFFFFF] main-container flex-1 min-h-screen">
             
-
             <div className="max-w-full bg-[#FFFFFF]">
-                <div>
+                <div className="lg:py-6">
                     <Header />
                 </div>
+
                 <main className=''>
                     <FAQs showCard={false}/>
                 </main>

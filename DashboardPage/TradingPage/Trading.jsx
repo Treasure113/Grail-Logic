@@ -184,7 +184,7 @@ export default function Trading() {
     const [status, setStatus] = useState("connected");
         
     return (
-        <section className="w-full p-6 bg-[#0D0B1D]">
+        <section className="w-full p-6 bg-[#0D0B1D] lg:max-w-[1140px]">
             <h1 className="text-white text-[24px] font-bold border-b p-5 lg:-mt-8 border-[#171717] bg-[#0D0B1D]">
                     Trading
             </h1>

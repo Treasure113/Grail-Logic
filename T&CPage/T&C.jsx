@@ -1,4 +1,4 @@
-import { TextList } from "../PrivacyPolicyPage/PrivacyPolicy";
+import { TextList } from "../PricingPage/PrivacyPolicyPage/PrivacyPolicy";
 
 
 export default function TandC() {
@@ -149,7 +149,7 @@ export default function TandC() {
                             label='Privacy & Data Use'
                             info={
                                 <div className="text-[#C3C3C3] text-sm lg:w-3/4 lg:text-[19px] lg:leading-[200%]">
-                                        We take data privacy seriously. By using Grail Logic, you consent to our collection and use of information as described in our [Privacy Policy].  Your credentials and API keys are stored securely and encrypted.
+                                        We take data privacy seriously. By using Grail Logic, you consent to our collection and use of information as described in our [Privacy Policy]. Your credentials and API keys are stored securely and encrypted.
                                 </div>
                             }
                         />
@@ -176,7 +176,7 @@ export default function TandC() {
                             label='Contact Information'
                             info={
                                 <div className="text-[#C3C3C3] text-sm lg:text-[19px] lg:leading-[200%] lg:w-[32rem]">
-                                        For questions about these terms or other inquiries, contact us at:  📧 support@graillogic.com                                     
+                                        For questions about these terms or other inquiries, contact us at: 📧 support@graillogic.com                                     
                                 </div>
                             }
                         />

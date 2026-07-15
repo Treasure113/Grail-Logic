@@ -15,7 +15,7 @@ export function FAQCards({text, dropDownText}) {
             <button className={`flex justify-between items-center`}
                 onClick={() => setDropDown(!dropDown)}
             >
-                    <h1 className={`!text-black text-sm`}>
+                    <h1 className={`!text-black text-sm text-left`}>
                         {text}
                     </h1>
 
@@ -79,7 +79,7 @@ export function Card({className}) {
 
             <div className='absolute p-8 top-[3rem] inset-x-0 mx-auto flex justify-center md:top-24 md:inset-x-auto md:mx-0 md:left-1/2 md:-translate-x-1/2 w-full'>
                     <div className='flex flex-col text-center items-center gap-4 w-full max-w-xl'>
-                        <h1 className='text-[20px] text-white md:text-[30px] leading-normal font-semibold'>
+                        <h1 className='text-[20px] text-white md:text-[30px] leading-tighter lg:leading-normal font-semibold'>
                             Ready to Let Your Account Trade Smarter?
                         </h1>
                         <p className='!text-white text-sm opacity-80'>
@@ -110,14 +110,14 @@ export function Card({className}) {
 export default function FAQs({showCard = true}) {
     return (
         <section className='flex flex-col gap-8 p-6 md:py-24'>
-            <div className="w-full flex flex-col items-center">
+            <div className="w-full flex flex-col items-center py-5">
                 <div className="text-center flex flex-col gap-4 md:gap-8">
-                    <h1 className="!text-black text-[24px] tracking-tight md:text-[44px]">Frequently Asked Questions</h1>
-                    <p className="text-sm opacity-50 w-3/4 translate-x-[3.5em] lg:-translate-x-[rem] leading-relaxed md:w-full">Everything you need to know before getting started with Grail Logic.</p>
+                    <h1 className="!text-black text-[24px] min-w-[343px] tracking-tight md:text-[44px]">Frequently Asked Questions</h1>
+                    <p className="text-sm opacity-50 leading-relaxed md:w-full">Everything you need to know before getting started with Grail Logic.</p>
                 </div>
             </div>
 
-            <div className='flex flex-col gap-12 md:p-12 lg:w-1/2 lg:mx-auto'>
+            <div className='flex flex-col gap-12 md:py-12 lg:max-w-[900px] lg:mx-auto'>
                <FAQCards 
                 text='Do I need trading experience to use Grail Logic?'
                 dropDownText='No, you don’t. Once you connect your broker account, our system handles the trading for you. There’s no need to monitor charts or manage trades manually.'

@@ -1,5 +1,8 @@
 import { MoveRight } from 'lucide-react';
 
+const DesktopBottom = '/Bottom 1.png'
+const MobileBottom = '/Bottom 2.png'
+
 const Links = [
     {
         heading: 'Platform',
@@ -23,7 +26,7 @@ const Links = [
         links: [
             {
                 label: 'About Us',
-                href: '/about-us'
+                href: '/company'
             },
             {
                 label: 'Terms & Condition',
@@ -69,8 +72,8 @@ const Links = [
 
 export default function Footer() {
     return (
-        <footer className="p-6 flex flex-col gap-20 max-w-none bg-[#0D0D0D]">
-            <div className='flex flex-col gap-12 lg:w-3/4 mx-auto w-full md:justify-between md:flex-row md:gap-24 md:py-12'>
+        <footer className="p-6 gap-6 flex flex-col bg-[#0D0D0D]">
+            <div className='flex flex-col gap-12 lg:px-32 mx-auto w-full md:justify-between md:flex-row md:gap-[225px] md:py-12'>
                 {/* Newsletter Div */}
                 <div className="p-6 bg-[#1C1C1C] flex-1 md:max-w-md flex-col flex gap-4 rounded-xl lg:text-[32px] leading-normal">
                     <h1>
@@ -123,14 +126,12 @@ export default function Footer() {
 
 
             {/* Bottom */}
-            <div className='text-center flex flex-col gap-5 lg:gap-1 max-w-full h-full'>
-                <div className='whitespace-nowrap relative'>
-                    <div className=''>
-                        <h1 className='text-2xl font-bold tracking-[4%] lg:text-[160.13px] decoration-1 !text-[#222222] md:text-[125px]'>GRAIL LOGIC</h1>
-                    </div>
-                    <div className='absolute z-10 p-6 bg-[#0D0D0D] w-6xl bottom-1 left-88'></div>
-                </div>
-                <p className='text-[#626262] text-sm opacity-40'>© 2025 Grail Logic. All rights reserved.</p>
+            <div>
+                <img src={DesktopBottom} className='hidden lg:flex'/>
+            </div>
+
+            <div>
+                <img src={MobileBottom} className='lg:hidden'/>
             </div>
         </footer>
     )

@@ -3,6 +3,9 @@ import Footer from "../HomePage/Footer"
 
 import TandC from "./T&C";
 
+import { Frame3 } from "../HomePage/main";
+import { Frame4 } from "../HomePage/main";
+
 
 const Frame1 = '/Frame 967.png';
 const Frame2 = '/Frame 968.png';
@@ -11,7 +14,7 @@ const Frame2 = '/Frame 968.png';
 export default function TandCPage() {
     return (
         <>
-        <div>
+        <div className="flex-1 min-h-screen main-container">
             <div className="relative max-w-full flex flex-col
                     bg-[size:20px_50%] bg-[#0D0B1D]"
             > 
@@ -22,16 +25,27 @@ export default function TandCPage() {
             </div>   
                 {/* Background Images */}
                 <div className="flex">                    
-                    <div className="absolute left-0">
+                    <div className="absolute left-0 w-[463px]">
                         <img src={Frame2}/>
                     </div>
 
-                    <div className="absolute right-0">
+                    <div className="absolute right-0 w-[463px]">
                         <img src={Frame1}/>
                     </div>
                 </div>
 
-                <Header />
+                <div className="lg:hidden md:hidden">
+                    <div className="absolute z-0 left-0 pointer-events-none">
+                        <img src={Frame3} className="w-[105px]"/>
+                    </div>
+                                
+                    <div className="absolute z-0 right-0 pointer-events-none">
+                        <img src={Frame4} className="w-[105px]"/>
+                    </div>
+                </div>
+                                
+
+                <Header className='lg:mt-6'/>
                 
                 <main>
                     <TandC />

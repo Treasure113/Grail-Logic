@@ -20,8 +20,6 @@
   max-width: 1440px; /* Keeps the dashboard from stretching too wide on massive screens */
   margin-left: auto;  /* Equal push from left */
   margin-right: auto; /* Equal push from right */
-  padding-left: 24px;
-  padding-right: 24px;
 }
 
 .dot {
@@ -166,6 +164,8 @@ button {
 .trade-table th {
   padding: clamp(8px, 2vw, 22px);
 }
+
+
 
 
 

@@ -137,24 +137,19 @@ export function PricingCard2() {
  }
 
 
-
-
-
-
-
 export default function HeroSection() {
     return (
-        <section id='Hero Section' className=" mt-12 flex flex-col gap-16">
+        <section id='Hero Section' className="lg:mt-24 mt-12  flex flex-col gap-16">
 
             <div className='flex flex-col mx-auto gap-12 items-center justify-center'>                   
                         <div className='flex flex-col items-center justify-center max-w-full text-center  gap-6'>
                             <div>
-                                <h1 className='text-[28px] md:text-md lg:text-5xl font-[700] tracking-wide leading-tight w-[343px] lg:w-[800px] h-auto text-center'>
+                                <h1 className='text-[28px] md:text-md lg:text-[68px] font-[700] tracking-wide leading-tight w-[343px] lg:w-[800px] h-auto text-center'>
                                     Flexible pricing built to <span className="text-[#C3C3C3]">grow with you</span>
                                 </h1>
                             </div>
                             <div className='w-3/4'>
-                                <p className='text-white leading-[150%]'>
+                                <p className='text-white/70 lg:text-white leading-[150%]'>
                                     Whether you're just getting started or scaling up, Grail Logic has a plan that fits your needs.
                                 </p>
                             </div>
@@ -163,81 +158,87 @@ export default function HeroSection() {
                         <Vector />
                         
                                         
-                        <div className="relative lg:top-[8rem] z-0 flex items-center flex-col gap-12 -mt-13">
-                            <VectorDeskTop 
-                            className='absolute'
-                        />
+                        <div className="relative lg:top-[10rem] z-0 flex items-center flex-col gap-12 -mt-24">
+                            <div className="flex justify-center lg:mt-24">
+                                <VectorDeskTop 
+                                    className='absolute'
+                                />
+                            </div>
                             
-                            <ToggleButton />
 
-                            {/* Price Cards */}
-                            <div className="flex flex-col lg:flex-row gap-6">
-                            <PricingCard 
-                                type='Starter'
-                                description='Perfect for beginners.'
-                                price ='Free'
-                                subcontentlabel='What you will get'
-                                list = {
-                                    <div className="flex flex-col gap-4">
-                                    <List 
-                                        text='Trade mirroring access'
-                                    />
-                                    <List 
-                                        text='Up to $500 account balance'
-                                    />
-                                    <List 
-                                        text='Basic Support'
-                                    />
-                                    <List 
-                                        text='24-Hour Customer Service'
-                                    />
-                                    <List 
-                                        text='Access to Monthly Newsletter'
-                                    />
-                            </div>
-                                                }
-                                            />
+                            <div className="flex flex-col gap-6 justify-center items-center lg:gap-12 lg:-mt-36">
+                                <div>
+                                    <ToggleButton />
+                                </div>
 
-                            <PricingCard2 />
+                                {/* Price Cards */}
+                                <div className="flex flex-col lg:flex-row gap-6 px-6">
+                                    <PricingCard 
+                                    type='Starter'
+                                    description='Perfect for beginners.'
+                                    price ='Free'
+                                    subcontentlabel='What you will get'
+                                    list = {
+                                        <div className="flex flex-col gap-4">
+                                        <List 
+                                            text='Trade mirroring access'
+                                        />
+                                        <List 
+                                            text='Up to $500 account balance'
+                                        />
+                                        <List 
+                                            text='Basic Support'
+                                        />
+                                        <List 
+                                            text='24-Hour Customer Service'
+                                        />
+                                        <List 
+                                            text='Access to Monthly Newsletter'
+                                        />
+                                </div>
+                                                    }
+                                                />
 
-                            <PricingCard 
-                                type='Elite'
-                                description='High-volume traders'
-                                price ={
-                                    <div>
-                                        <h1 className="text-[36px]">$99 <span className="text-sm font-[Inter] font-normal text-[#FFFFFFCC]">/ per month</span></h1>
-                                    </div>
-                                }
-                                subcontentlabel='Everything in Pro Trader'
-                                list={
-                                   <div className="flex flex-col gap-4">
-                                                <List 
-                                                    text='Unlimited Trade Mirroring'
-                                                />
-                                                <List 
-                                                    text='Dedicated Account Manager'
-                                                />
-                                                <List 
-                                                    text='Weekly Performance Reports'
-                                                />
-                                                <List 
-                                                    text='Early Access to New Features'
-                                                />
-                                                <List 
-                                                    text='Private Discord Group for Top Traders'
-                                                />
+                                <PricingCard2 />
+
+                                <PricingCard 
+                                    type='Elite'
+                                    description='High-volume traders'
+                                    price ={
+                                        <div>
+                                            <h1 className="text-[36px]">$99 <span className="text-sm font-[Inter] font-normal text-[#FFFFFFCC]">/ per month</span></h1>
                                         </div>
-                                }
-                            />
+                                    }
+                                    subcontentlabel='Everything in Pro Trader'
+                                    list={
+                                    <div className="flex flex-col gap-4">
+                                                    <List 
+                                                        text='Unlimited Trade Mirroring'
+                                                    />
+                                                    <List 
+                                                        text='Dedicated Account Manager'
+                                                    />
+                                                    <List 
+                                                        text='Weekly Performance Reports'
+                                                    />
+                                                    <List 
+                                                        text='Early Access to New Features'
+                                                    />
+                                                    <List 
+                                                        text='Private Discord Group for Top Traders'
+                                                    />
+                                            </div>
+                                    }
+                                />
+                                </div>
                             </div>
-
                         </div>
 
                         
             </div>
 
             <Card 
-              className='border lg:mt-36 border-white bg-white w-full lg:max-w-7xl mx-auto px-12 py-12'
+              className='border lg:mt-40 border-white bg-white w-full mx-auto px-12 py-12'
             />
         </section>
     );

@@ -63,10 +63,10 @@ function VectorDeskTop({className}) {
 export default function LetsTalk() {
     const [phone, setPhone] = useState('');
     return (
-        <section id='contact-us' className='relative py-12 h-auto'>
+        <section id='contact-us' className='relative py-12'>
             <VectorDeskTop />
 
-            <div className='flex flex-col lg:gap-12 lg:mt-[12rem]'>
+            <div className='flex flex-col lg:gap-12 lg:mt-24'>
                 
                 <div className="text-center flex flex-col gap-4 lg:gap-12 md:gap-8 items-center">
                     <h1 className="text-[24px] tracking-tight md:text-[44px] lg:text-[64px]">Let’s Talk</h1>
@@ -81,14 +81,14 @@ export default function LetsTalk() {
                         
                         <div className='flex flex-col gap-4'>
                             <div className='lg:flex lg:gap-4 lg:max-w-full'>
-                                <div className='w-1/2'>
+                                <div className='lg:w-1/2'>
                                 <InputField 
                                     text='First Name'
                                     placeholder='Enter your first name'
                                 />
                                 </div>
 
-                                <div className='w-1/2'>
+                                <div className='lg:w-1/2'>
                                 <InputField 
                                     text='Last Name'
                                     placeholder='Enter your last name'
@@ -172,7 +172,7 @@ export default function LetsTalk() {
                 </div>
                 
                 <div>
-                    <div>
+                    <div className='lg:-mt-12'>
                         <StillNeedHelp 
                             isTestimonial={false}
                             className2='bg-[#0D0D0D] py-12'
@@ -186,7 +186,7 @@ export default function LetsTalk() {
                         </div>
                     </div>
 
-                    <div className='bg-white -mb-12'>
+                    <div className='bg-white -mb-12 lg:-mt-32'>
                         <FAQs 
                             showCard={false}
                         />
