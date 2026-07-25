@@ -287,6 +287,13 @@ const testimonials = [
     image: image3,
     text: "I knew nothing about forex before joining Grail Logic. After connecting my account, I started seeing consistent results within the first few weeks. I've never looked back.",
   },
+  {
+    id: 6,
+    name: "Tolu A.",
+    role: "First-time Trader",
+    image: image3,
+    text: "I knew nothing about forex before joining Grail Logic. After connecting my account, I started seeing consistent results within the first few weeks. I've never looked back.",
+  },
 ];
 
 
@@ -383,15 +390,15 @@ export function Testimonials() {
                     {/* <div className={`w-full top-3 bottom-1 border-t border-black/20 p-6 border-transparent  overflow-hidden`}></div> */}
                     <div className="flex flex-col justify-center items-center gap-2 lg:gap-8">
                         <h1 className="text-[20px] lg:text-[44px]">What Our Traders Are Saying</h1>
-                        <p className="text-[#EEEEEE] text-center opacity-80 text-sm md:w-1/2">These are real people with real results. Hear how Grail Logic is helping users grow their trading accounts with confidence and zero stress.</p>
+                        <p className="text-[#EEEEEE] text-center opacity-80 text-sm md:w-1/2 lg:w-[600px]">These are real people with real results. Hear how Grail Logic is helping users grow their trading accounts with confidence and zero stress.</p>
                     </div>
 
                     <EmblaCarousel />
 
                   </div>
                 </div>
-    )
-}
+    );
+};
 
 export default function OurItWork() {
     return (
@@ -409,7 +416,9 @@ export default function OurItWork() {
 
                 <Cards />
 
-                <Testimonials />               
+              <div className="lg:max-w-full w-full">
+                <Testimonials />   
+              </div>            
             </div>
         </section>
     )

@@ -13,7 +13,7 @@ const Frame2 = '/Frame 968.png';
 
 export default function CompanyPage() {
     return (
-        <div className="main-container">
+        <div className="">
             <div className="relative max-w-full flex flex-col
                     bg-[size:20px_100%] bg-[#0D0B1D]"
             >  

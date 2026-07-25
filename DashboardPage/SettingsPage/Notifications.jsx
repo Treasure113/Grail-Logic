@@ -70,7 +70,7 @@ const TextAndCheckBox = ({label, text}) => {
 export default function Notifications() {
     const [changes, setChanges] = useState(false);
     return (
-        <div>
+        <div className="px-6 -mt-8">
 
         <div className="bg-gradient-to-r from-[#100E24] to-[#161233] border border-[#1D1B3D] rounded-[8px] max-w-[650px] p-6 flex flex-col gap-12">
            <div className="flex flex-col gap-6">

@@ -271,10 +271,14 @@ const AccountSync = ({status, setStatus, connected, setConnected}) => {
                 )}
 
                 {status === "disconnected" && (
+                    <>                    
                     <p>
                     Your account is currently not synced.
                     Please reconnect to continue receiving trades.
                     </p>
+                    <div className="py-[9px]"></div>
+                     </>
+
                 )}
 
                 {status === "error" && (
@@ -412,7 +416,7 @@ return (
                         <div className="">
                             <TradingLineChart 
                              h1= 'Trading Overview Chart'
-                             className='lg:max-w-[720px] lg:mt-1'
+                             className='lg:max-w-[720px] lg:mt-0.5'
                             />
                         </div>
                   </div>
@@ -463,7 +467,7 @@ return (
                                 <AlertsAndUpdates 
                                 text='A mirrored trade closed with a loss.'
                                 className='border-b border-[#1D1B3D]'
-                                
+
                                 value={
                                     <span>SELL GBP/JPY – <span className="text-[#E42B2B]">-$125.40</span></span>
                                 }

@@ -189,7 +189,7 @@ export default function Trading() {
                     Trading
             </h1>
     
-            <div className="bg-gradient-to-r from-[#100E24] to-[#161233] flex flex-col mt-6">
+            <div className="bg-gradient-to-r from-[#100E24] to-[#161233] flex flex-col mt-12">
                             <div className="flex flex-col lg:flex-row lg:justify-between gap-6 border border-[#1D1B3D] rounded-tl-[8px] rounded-tr-[8px]">
                                 <div className="flex flex-col lg:flex-row lg:items-center lg:gap-4 gap-4 p-6">
                                     <div>

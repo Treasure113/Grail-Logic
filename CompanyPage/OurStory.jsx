@@ -179,7 +179,7 @@ export default function OurStory() {
                     <p className="text-sm opacity-80 w-3/4 lg:text-lg">We started small and grew into a trusted platform for smart trading tools.</p>
                 </div>
 
-                <div className="flex flex-col gap-2 lg:mb-32 lg:-mt-1 px-2 lg:max-w-[1200px] rounded-lg w-full mx-auto lg:flex-row lg:gap-y-2 lg:gap-x-2 bg-[#FAFAF9] py-2 ">      
+                <div className="flex flex-col gap-2 lg:mb-32 lg:-mt-1 px-2 lg:max-w-[1600px] rounded-lg w-full mx-auto lg:flex-row lg:gap-y-2 lg:gap-x-2 bg-[#FAFAF9] py-2 ">      
                     <Data 
                         data = '$2.5M'
                         text = 'User volume mirrored'

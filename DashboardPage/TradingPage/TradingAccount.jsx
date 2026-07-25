@@ -111,7 +111,7 @@ export default function TradingAccount() {
             </h1>
          <div>
             
-            <div className="flex justify-between p-6">
+            <div className="flex justify-between p-6 mt-5">
                 <div className="flex flex-col gap-1">
                     <div>
                         <h1 className="text-[20px]">Manage Trading Account</h1>

@@ -9,7 +9,7 @@ const image2 = '/ceo-grail-logic.png'
 export function Data({data, text, className}) {
 
     return (
-        <div className={`flex flex-1 flex-col w-full gap-8 bg-[#FFFFFF] p-8 lg:p-18 lg:text-center lg:items-center ${className}`}>
+        <div className={`flex flex-1 flex-col w-full gap-8 bg-[#FFFFFF] p-8 lg:p-24 lg:text-center lg:items-center ${className}`}>
             <div>
                 <h1 className="!text-black text-[44px] lg:text-[64px]">{data}</h1>
             </div>
@@ -66,21 +66,21 @@ export function WhyTrustGrailLogic({text1, text2}) {
 
 export function OverlayedDivAndAnalysis({className, className2}) {
     return (
-    <div className={`relative w-full mx-auto aspect-[4/3] md:aspect-[16/9] bg-white flex flex-col ${className}`}>
+    <div className={`relative w-full lg mx-auto aspect-[4/3] md:aspect-[16/9]  bg-white flex flex-col ${className}`}>
                     <div className={`${className2} relative w-full -mb-20`}>
-                        <div className="absolute inset-0 z-10 w-full h-[800px] lg:max-w-[1780px] lg:h-[780px] p-6 lg:p-24">
+                        <div className="absolute inset-0 z-10 w-full h-[800px] mx-auto lg:max-w-[1780px] lg:h-[900px] p-6 lg:p-24">
                             <img src={overlayImage} className="w-full h-full object-cover object-right lg:object-top rounded-2xl bg-gradient-to-r from-[#3E3E3EB2] to-[#3E3E3E66] opacity-[50%]" />
                         </div>
 
-                        <div className='w-full h-[800px] lg:max-w-[1780px] lg:h-[780px] p-6 lg:p-24'>
+                        <div className='w-full h-[800px] lg:max-w-[1780px] mx-auto lg:h-[900px] md:h-[780px] p-6 lg:p-24'>
                             <img src={image} className="w-full h-full object-cover object-[15%_center] lg:object-top md:max-w-full lg:max-w-full rounded-2xl opacity-100" />
                         </div>
                     </div>
 
             {/* Text */}
 
-                <div className="absolute z-20 bottom-[32rem] left-[3rem] lg:top-[31rem] lg:left-[8rem] flex flex-col gap-6">
-                    <h1 className="text-[24px] w-3/4 lg:w-1/2 md:w-1/2">Our AI engine adapts to market conditions and <span className='hover:text-gray-400 transition duration-300'>
+                <div className="absolute z-20 bottom-[32rem] left-[3rem] lg:top-[30rem] lg:left-[12rem] flex flex-col gap-6 lg:gap-12">
+                    <h1 className="text-[24px] w-3/4 lg:w-[627.06px] md:w-1/2 lg:text-[38px] lg:leading-normal">Our AI engine adapts to market conditions and <span className='hover:text-gray-400 transition duration-300'>
                         executes data-driven trades with consistency.</span> 
                     </h1>
 
@@ -95,7 +95,7 @@ export function OverlayedDivAndAnalysis({className, className2}) {
 
 
                 {/* Analysis */}
-                <div className="flex flex-col gap-6 lg:mb-32 lg:-mt-1 mt-12 px-2 rounded-lg w-full mx-auto lg:max-w-[1200px] lg:flex-row lg:gap-x-2 bg-[#FAFAF9] py-2">
+                <div className="flex flex-col gap-6 lg:mb-32 lg:-mt-1 mt-12 px-2 mx-auto rounded-lg w-full lg:max-w-[1600px] lg:flex-row lg:gap-x-2 bg-[#FAFAF9] py-2">
                     <Data 
                         data = '1.8x'
                         text = 'Monthly returns on investments'

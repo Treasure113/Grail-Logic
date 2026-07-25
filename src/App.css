@@ -17,9 +17,10 @@
 
 .main-container {
   width: 100%;
-  max-width: 1440px; /* Keeps the dashboard from stretching too wide on massive screens */
+  max-width: 1280px; /* Keeps the dashboard from stretching too wide on massive screens */
   margin-left: auto;  /* Equal push from left */
   margin-right: auto; /* Equal push from right */
+  
 }
 
 .dot {

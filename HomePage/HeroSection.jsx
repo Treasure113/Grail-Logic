@@ -129,7 +129,7 @@ function ImageDiv() {
 function HeroImage() {
     return (
             <div className='-mt-30 lg:-mt-32'>
-                <img src={dashboardImage} className='w-full h-auto lg:max-w-[1154px] mx-auto' alt="dashboard-image.png" />
+                <img src={dashboardImage} className='w-full h-auto lg:max-w-[1154px] mx-auto' alt="herosection-image.png" />
             </div>
     )
 };
@@ -147,7 +147,7 @@ export function TrustedBy({className}) {
         
                     <div className={`flex flex-col items-center -mt-12 justify-center ${className}`}>
                                             
-                        <div className='lg:w-[1200px] w-full bg-black p-3 shadow-[1px_1px_80px_100px_]'>
+                        <div className='lg:max-w-full w-full bg-black p-3 shadow-[1px_1px_80px_100px_]'>
                             <div className='bg-black opacity-100'></div>
                         </div>
 

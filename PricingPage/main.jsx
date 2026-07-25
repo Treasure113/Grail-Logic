@@ -16,7 +16,7 @@ const Frame2 = '/Frame 968.png';
 export default function PricingPage() {
     return (
         <>
-        <div className="main-container flex-1 min-h-screen">
+        <div className="flex-1 min-h-screen">
             <div className="relative max-w-full flex flex-col
                     bg-[size:20px_50%] bg-[#0D0B1D]"
             > 

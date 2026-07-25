@@ -14,7 +14,7 @@ export const Frame4 = '/mobile ray 2.png';
 
 export default function HomePage() {
     return (
-        <div className="main-container flex-1 min-h-screen">
+        <div className="flex-1 min-h-screen">
             <div className="relative max-w-full flex flex-col 
                     bg-[size:20px_100%] bg-[#0D0B1D]"
             > 

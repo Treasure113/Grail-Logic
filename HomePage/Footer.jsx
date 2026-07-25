@@ -91,7 +91,7 @@ export default function Footer() {
                         {/* Action Arrow Button */}
                         <button
                             type='submit'
-                            className='absolute right-2 top-1/2 -translate-y-1/2 text-[#BEBEBE]'
+                            className='absolute right-2 top-1/2 -translate-y-1/2 lg:-translate-y-2 text-[#BEBEBE]'
                             aria-label='Submit email'
                         >   <MoveRight/>
                         </button>
