@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from "embla-carousel-autoplay";
 import AutoScroll from "embla-carousel-auto-scroll";
@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 
 import { Button } from "./Header"
+import { ConnectAccountModal } from "./HeroSection";
 
 
 const image1 = '/auth-image.png'
@@ -15,6 +16,9 @@ const Table = '/Content.png'
 
 
 function Cards() {
+  const [modal, setModal] = useState(false);
+  const [userName, setUserName] = useState("");
+    
     return (
         <div className="w-full">
             <div className="flex flex-col items-center gap-8 md:gap-12">
@@ -224,6 +228,16 @@ function Cards() {
                 <Button
                     label="Connect your account"
                     className="w-fit px-8 py-4"
+                    onClick={() => {
+                      console.log('clicked');
+                      setModal(true)}} 
+                />
+
+                <ConnectAccountModal
+                    modal={modal}
+                    setModal={setModal}
+                    userName={userName}
+                    setUserName={setUserName}
                 />
             </div>
         </div>

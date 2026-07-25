@@ -1,8 +1,10 @@
 import {useState} from 'react';
+import { Link } from 'react-router-dom';
 
 import { Minus } from 'lucide-react';
 import { Plus } from 'lucide-react';
 import { Button } from './Header'
+import { ConnectAccountModal } from './HeroSection';
 
 
 const abstractBackground = '/Frame 971.png'
@@ -67,6 +69,10 @@ export function Card({className}) {
      const handleMouseLeave = () => {
         setPosition({x: 0, y: 0})
      }
+
+     const [modal, setModal] = useState(false);
+     const [userName, setUserName] = useState("");
+  
     return (
         <div className={`flex items-center justify-center ${className}`}>
             {/* Main Div */}
@@ -96,11 +102,12 @@ export function Card({className}) {
                     onMouseMove = {handleMouseMove}
                     onMouseLeave = {handleMouseLeave}
             >
+            <Link to='/signup'>
                 <Button 
                     label = 'Get started now'
                     className='pt-4 pr-8 pb-4 pl-8 w-fit'
-                     
                 />
+            </Link>
             </div>
             </div>
         </div>

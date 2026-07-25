@@ -13,7 +13,7 @@ const Links = [
             },
             {
                 label: 'Get Started',
-                href: '/get-started'
+                href: '/signup'
             },
             {
                 label: 'FAQs',

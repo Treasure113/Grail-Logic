@@ -283,11 +283,8 @@ export function ConnectAccountModal({
   );
 } 
 
-export function HeroText({maintext, subtext}) {
-      const [modal, setModal] = useState(false);
-    const [userName, setUserName] = useState('');
+export function HeroText({maintext, subtext}) { 
     return (
-    
                     <div className='relative mt-20 flex flex-col mx-auto w-fit gap-12 items-center justify-center'>                   
                         <div className='flex flex-col items-center justify-center max-w-full text-center gap-6'>
                             <div className='w-full lg:max-w-3/4'>
@@ -301,19 +298,14 @@ export function HeroText({maintext, subtext}) {
                                 </p>
                             </div>
                         </div>
-
-                         <ConnectAccountModal
-                            modal={modal}
-                            setModal={setModal}
-                            userName={userName}
-                            setUserName={setUserName}
-                        />
                     </div>
     )
 }
 
 
 export default function HeroSection() {
+    const [modal, setModal] = useState(false);
+    const [userName, setUserName] = useState("");
   
     return (
         <section className='min-h-screen'>
@@ -328,9 +320,17 @@ export default function HeroSection() {
                     </div>
 
                      <Button label="Connect your account" className='pt-4 pr-8 pb-4 pl-8 w-fit z-10 mb-6' 
+                           id='connect-account'
                            onClick={() => {
                             console.log('clicked');
                             setModal(true)}} 
+                        />
+
+                        <ConnectAccountModal
+                            modal={modal}
+                            setModal={setModal}
+                            userName={userName}
+                            setUserName={setUserName}
                         />
                 </div>
             

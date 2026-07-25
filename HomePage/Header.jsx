@@ -13,11 +13,13 @@ const navLinks = [
   { id: 4, label: "Contact Us", href: "/contact-us" },
 ];
 
-export function Button({ label, className, onClick}) {
+export function Button({ label, className, onClick, id}) {
   const [click, setClick] = useState(false);
   return (
     
-      <button className={`text-[var(--text)] text-sm rounded-[12px] shadow-[0px_0px_0px_3px_#133367] ring-1 ring-white/20 transition-all duration-300
+      <button 
+      id={id}
+      className={`text-[var(--text)] text-sm rounded-[12px] shadow-[0px_0px_0px_3px_#133367] ring-1 ring-white/20 transition-all duration-300
       hover:translate-y-1
       hover:shadow-lg 
       ${click ? 'bg-[#0D0D0D]' : 'bg-[#3B3C9A]'}
